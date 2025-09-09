@@ -7,7 +7,6 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 export default function MarketProblem() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -61,7 +60,7 @@ export default function MarketProblem() {
           </div>
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <Image
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop"
               alt="Architects and builders collaborating"
               width={600}
               height={400}
