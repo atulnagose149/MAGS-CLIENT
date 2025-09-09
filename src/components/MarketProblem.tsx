@@ -41,18 +41,18 @@ export default function MarketProblem() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-neutral-900 text-neutral-100 py-24 px-6 md:px-16 lg:px-28"
+      className="relative bg-neutral-50 text-neutral-900 py-24 px-6 md:px-16 lg:px-28"
     >
       <div className="max-w-6xl mx-auto space-y-24">
         {/* Who We Help */}
         <div className="fade-up grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-amber-400">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-amber-600">
               Who We Help
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-neutral-300">
+            <p className="mt-4 text-lg leading-relaxed text-neutral-700">
               We partner with{" "}
-              <span className="text-white font-semibold">
+              <span className="text-neutral-900 font-semibold">
                 architects, visionary builders, and developers
               </span>{" "}
               to bring ambitious projects to life.
@@ -83,13 +83,13 @@ export default function MarketProblem() {
             </div>
           </div>
           <div className="order-1 md:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-amber-400">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-amber-600">
               The Problem We Solve
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-neutral-300">
+            <p className="mt-4 text-lg leading-relaxed text-neutral-700">
               Modern construction demands more than just windows and doors. It
               demands{" "}
-              <span className="text-white font-semibold">
+              <span className="text-neutral-900 font-semibold">
                 stunning, high-performance barriers
               </span>{" "}
               that disappear—connecting interior spaces with the outside world
@@ -101,12 +101,12 @@ export default function MarketProblem() {
         {/* What We Provide */}
         <div className="fade-up grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-amber-400">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-amber-600">
               What We Provide
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-neutral-300">
+            <p className="mt-4 text-lg leading-relaxed text-neutral-700">
               We are the{" "}
-              <span className="text-white font-semibold">
+              <span className="text-neutral-900 font-semibold">
                 craftsmen behind the glass
               </span>
               . We provide the invisible engineering: the elegant, ultra-strong,
@@ -127,37 +127,41 @@ export default function MarketProblem() {
         </div>
 
         {/* Our Promise */}
-        <div className="fade-up text-center bg-neutral-800 rounded-3xl p-10 border border-amber-400/20">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-amber-400">
+        <div className="fade-up text-center bg-white rounded-3xl p-10 border border-amber-600/30 shadow-xl">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-amber-600">
             Our Promise
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-neutral-300 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg leading-relaxed text-neutral-700 max-w-3xl mx-auto">
             From initial concept to final installation, we deliver the{" "}
-            <span className="text-white font-semibold">
+            <span className="text-neutral-900 font-semibold">
               quality, technical support, and peace of mind
             </span>{" "}
             that allows your creativity to flourish, ensuring the final build is
             not only beautiful but built to last.
           </p>
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-neutral-700/50 p-6 rounded-xl">
-              <div className="text-amber-400 text-4xl mb-4">✓</div>
-              <h3 className="font-semibold text-white">Quality Assurance</h3>
-              <p className="mt-2 text-neutral-300 text-sm">
+            <div className="bg-neutral-100 p-6 rounded-xl border border-neutral-200">
+              <div className="text-amber-600 text-4xl mb-4">✓</div>
+              <h3 className="font-semibold text-neutral-900">
+                Quality Assurance
+              </h3>
+              <p className="mt-2 text-neutral-600 text-sm">
                 Precision engineering and rigorous testing
               </p>
             </div>
-            <div className="bg-neutral-700/50 p-6 rounded-xl">
-              <div className="text-amber-400 text-4xl mb-4">🛠️</div>
-              <h3 className="font-semibold text-white">Technical Support</h3>
-              <p className="mt-2 text-neutral-300 text-sm">
+            <div className="bg-neutral-100 p-6 rounded-xl border border-neutral-200">
+              <div className="text-amber-600 text-4xl mb-4">🛠️</div>
+              <h3 className="font-semibold text-neutral-900">
+                Technical Support
+              </h3>
+              <p className="mt-2 text-neutral-600 text-sm">
                 Expert guidance from concept to completion
               </p>
             </div>
-            <div className="bg-neutral-700/50 p-6 rounded-xl">
-              <div className="text-amber-400 text-4xl mb-4">⭐</div>
-              <h3 className="font-semibold text-white">Peace of Mind</h3>
-              <p className="mt-2 text-neutral-300 text-sm">
+            <div className="bg-neutral-100 p-6 rounded-xl border border-neutral-200">
+              <div className="text-amber-600 text-4xl mb-4">⭐</div>
+              <h3 className="font-semibold text-neutral-900">Peace of Mind</h3>
+              <p className="mt-2 text-neutral-600 text-sm">
                 Reliable solutions that stand the test of time
               </p>
             </div>
