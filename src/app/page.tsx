@@ -12,16 +12,36 @@ import ContactSection from "@/components/ContactSection";
 export default function HomePage() {
   return (
     <main className="overflow-x-hidden">
-      <HeroSection />
-      <MarketProblem />
-      <AvailableSolution />
-      <OurSolution />
-      <ProductsSection />
-      <ProjectsSection />
-      <TestimonialsSection />
-      <GallerySection />
-      <AboutSection />
-      <ContactSection />
+      <div id="hero">
+        <HeroSection />
+      </div>
+      <div id="market-problem">
+        <MarketProblem />
+      </div>
+      <div id="available-solution">
+        <AvailableSolution />
+      </div>
+      <div id="our-solution">
+        <OurSolution />
+      </div>
+      <div id="products">
+        <ProductsSection />
+      </div>
+      <div id="projects">
+        <ProjectsSection />
+      </div>
+      <div id="testimonials">
+        <TestimonialsSection />
+      </div>
+      <div id="gallery">
+        <GallerySection />
+      </div>
+      <div id="about">
+        <AboutSection />
+      </div>
+      <div id="contact">
+        <ContactSection />
+      </div>
     </main>
   );
 }
