@@ -67,15 +67,15 @@ export default function ProjectsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-neutral-900 text-neutral-100 py-24 px-6 md:px-16 lg:px-28"
+      className="relative bg-neutral-50 text-neutral-900 py-24 px-6 md:px-16 lg:px-28"
     >
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-amber-400">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-amber-600">
             Completed Projects
           </h2>
-          <p className="mt-4 text-lg text-neutral-400 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-neutral-600 max-w-3xl mx-auto">
             From landmark skyscrapers to luxury homes, our glazing systems
             empower ambitious projects worldwide. Each project is a testament to
             our engineering, craftsmanship, and partnership with visionary
@@ -88,23 +88,23 @@ export default function ProjectsSection() {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="project-card bg-neutral-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition border border-neutral-700"
+              className="project-card bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition border border-neutral-200"
             >
-              <div className="h-56 bg-neutral-700 overflow-hidden">
+              <div className="h-56 bg-neutral-100 overflow-hidden">
                 <Image
-  src={project.image}
-  alt={project.title}
-  width={1200}
-  height={800}
-  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-/>
+                  src={project.image}
+                  alt={project.title}
+                  width={1200}
+                  height={800}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
               </div>
               <div className="p-6">
-                <h3 className="text-2xl font-semibold text-amber-300">
+                <h3 className="text-2xl font-semibold text-amber-700">
                   {project.title}
                 </h3>
-                <p className="mt-3 text-neutral-300">{project.description}</p>
-                <p className="mt-4 text-sm text-neutral-400 italic">
+                <p className="mt-3 text-neutral-700">{project.description}</p>
+                <p className="mt-4 text-sm text-neutral-500 italic">
                   📍 {project.location}
                 </p>
               </div>
