@@ -171,7 +171,7 @@ export default function Footer() {
                   </div>
                   <div>
                     <a
-                      href="https://www.google.com/maps?q=23.0764,72.5077"
+                      href="https://www.google.com/maps?q=23.085512784100125, 72.49274872852467"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-300 text-sm leading-relaxed hover:underline"
