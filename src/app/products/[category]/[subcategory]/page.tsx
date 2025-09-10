@@ -228,9 +228,11 @@ export default function ProductsListPage() {
                   <p className="text-neutral-700 text-sm leading-relaxed mb-4">
                     {product.description}
                   </p>
-                  <p className="text-xs text-neutral-500 italic mb-4">
-                    {product.specs}
-                  </p>
+                  {"specs" in product && (
+                    <p className="text-xs text-neutral-500 italic mb-4">
+                      {product.specs}
+                    </p>
+                  )}
                   <div className="flex justify-end">
                     <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">
                       <svg
