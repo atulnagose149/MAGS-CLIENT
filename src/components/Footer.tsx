@@ -155,7 +155,7 @@ export default function Footer() {
             <div className="grid md:grid-cols-2 gap-6">
               {/* Address */}
               <div className="space-y-4">
-                <div className="flex items-start space-x-3">
+                <div className="flex items-start space-x-2">
                   <div className="w-5 h-5 bg-amber-600/20 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
                     <svg
                       className="w-3 h-3 text-amber-400"
@@ -170,13 +170,18 @@ export default function Footer() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-gray-300 text-sm leading-relaxed">
+                    <a
+                      href="https://www.google.com/maps?q=23.0764,72.5077"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 text-sm leading-relaxed hover:underline"
+                    >
                       106, Earth Retails, Bhadaj circle,
                       <br />
                       Science City, Ahmedabad,
                       <br />
                       Gujarat, India
-                    </p>
+                    </a>
                   </div>
                 </div>
 
