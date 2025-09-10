@@ -80,6 +80,74 @@ const productsData = {
       specs: "Max weight: 600kg • Glass: 5-30mm • Large span capability",
     },
   ],
+  "economy-casement": [
+    {
+      id: "mce28",
+      name: "MCE28 Economy Casement",
+      description:
+        "Economy casement system for basic residential applications with outward opening functionality",
+      image:
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      specs: "Max weight: 60kg • Glass: 4-8mm • Outward opening",
+    },
+    {
+      id: "mce92",
+      name: "MCE92 (Economy 3in1 Glass, Grill & Mesh)",
+      description:
+        "Economy 3-in-1 casement system with integrated glass, security grill, and mosquito mesh",
+      image:
+        "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      specs: "Max weight: 60kg • Glass: 4-8mm • 3-in-1 system • Triple gasket",
+    },
+  ],
+  "casement-windows-and-doors": [
+    {
+      id: "economy-casement",
+      name: "Economy Casement",
+      description:
+        "Affordable casement solutions with reliable performance for residential applications",
+      image:
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      products: ["MCE28", "MCE92"],
+    },
+    {
+      id: "premium-casement",
+      name: "Premium Casement",
+      description: "High-performance casement systems with advanced features",
+      image:
+        "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      products: ["MC45", "MC105", "MD45"],
+    },
+  ],
+  "premium-casement": [
+    {
+      id: "mc45",
+      name: "MC45",
+      description:
+        "Premium non-insulated casement system with triple gaskets for tropical climate performance",
+      image:
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      specs: "Max weight: 150kg • Glass: 5-35mm • Triple gasket system",
+    },
+    {
+      id: "mc105",
+      name: "MC105 (3in1 Glass, Grill & Mesh)",
+      description:
+        "Premium 3-in-1 casement system with integrated glass, security grill, and mosquito mesh",
+      image:
+        "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      specs:
+        "Max weight: 150kg • Glass: 5-35mm • 3-in-1 system • Deep 105mm frame",
+    },
+    {
+      id: "md45",
+      name: "MD45",
+      description: "Premium casement door system with enhanced performance",
+      image:
+        "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      specs: "Door system • Premium performance",
+    },
+  ],
 };
 
 export default function ProductsListPage() {

@@ -156,6 +156,7 @@ const subcategoriesData = {
         "Max weight: 300/400/600kg • Glass: 5-45mm • Lift and slide technology",
     },
   ],
+ 
 };
 
 export default function SubCategoryPage() {

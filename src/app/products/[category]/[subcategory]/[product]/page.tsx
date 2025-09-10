@@ -745,6 +745,186 @@ const productData = {
       },
     },
   },
+  mce28: {
+    name: "MCE28 Economy Casement",
+    fullName: "MAGS MCE28 Economy Casement System",
+    description:
+      "MCE28 Economy casement system - Coming Soon. This economy casement system provides reliable outward opening functionality for residential applications. Designed for cost-effective solutions while maintaining quality performance standards. Features outward opening mechanism with standard glazing options suitable for basic window applications.",
+    images: [
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+    ],
+    performance: {
+      comfort: {
+        airTightness: "-",
+        acoustics: "-",
+        waterTightness: "-",
+        windLoadResistance: "-",
+      },
+      safety: {
+        burglarResistance: "-",
+      },
+    },
+    properties: {
+      maxDimensions: {
+        minHeightOfVent: "500 mm", // Much smaller than sliding systems
+        minWidthOfVent: "300 mm", // Much narrower than sliding systems
+        maxHeightOfVent: "2100 mm", // Standard height for casement
+        maxWidthOfVent: "700 mm", // Much narrower than sliding systems
+        maxWeightOfVent: "60 kg", // Much lighter than sliding systems
+      },
+      sightlines: {
+        minFrameWidthOutward: "48 mm", // Outward opening specific
+        minVentWidthOutward: "41 mm", // Outward opening specific
+        minFrameVentWidthOutward: "88 mm", // Combined frame-vent width
+        depthFrame: "28 mm", // Frame depth
+        depthVent: "28 mm", // Vent depth
+        minWidthTProfile: "61 mm", // T-profile minimum width
+      },
+      glazing: {
+        rebateHeight: "12 mm", // Lower than sliding systems (15mm)
+        minGlassThickness: "4 mm", // Same as economy sliding systems
+        glazingMethod: "Dry Glazing with EPDM or Natural Silicon",
+        maxGlassThickness: "8 mm", // Same as economy sliding systems
+      },
+    },
+  },
+  mce92: {
+    name: "MCE92 (Economy 3in1 Glass, Grill & Mesh)",
+    fullName: "MAGS CASEMENT SYSTEM 3in1 MCE92",
+    description:
+      "MAGS CASEMENT SYSTEM 3in1 MCE92 is a non-insulated system for inward and outward opening windows and doors, designed according to the highest European quality standards. To guarantee superior quality and performance in every situation, the system has three gasket levels for inward and outward opening windows and doors. Through intelligent application, these multiple gaskets meet even the high air- and water tightness requirements of tropical regions. This simple, yet highly innovative design offers a very cost-efficient solution thanks to its optimised fabrication process. MCE92 can be realised with all types of inward and outward opening windows and doors, with security grill and mosquito net an extensive choice of accessories the perfect match of building concepts.",
+    images: [
+      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+    ],
+    performance: {
+      comfort: {
+        airTightness: "-",
+        acoustics: "-",
+        waterTightness: "-",
+        windLoadResistance: "-",
+      },
+      safety: {
+        burglarResistance: "-",
+      },
+    },
+    properties: {
+      maxDimensions: {
+        minHeightOfVent: "500 mm", // Same as MCE28
+        minWidthOfVent: "300 mm", // Same as MCE28
+        maxHeightOfVent: "2100 mm", // Same as MCE28
+        maxWidthOfVent: "700 mm", // Same as MCE28
+        maxWeightOfVent: "60 kg", // Same as MCE28
+      },
+      sightlines: {
+        minFrameWidthOutward: "48 mm", // Same as MCE28
+        minVentWidthOutward: "41 mm", // Same as MCE28
+        minFrameVentWidthOutward: "88 mm", // Same as MCE28
+        depthFrame: "92 mm", // DIFFERENT: Much deeper than MCE28 (28mm)
+        depthVent: "28 mm", // Same as MCE28
+        minWidthTProfile: "61 mm", // Same as MCE28
+      },
+      glazing: {
+        rebateHeight: "12 mm", // Same as MCE28
+        minGlassThickness: "4 mm", // Same as MCE28
+        glazingMethod: "Dry Glazing with EPDM or Natural Silicon",
+        maxGlassThickness: "8 mm", // Same as MCE28
+      },
+    },
+  },
+  mc45: {
+    name: "MC45",
+    fullName: "MAGS CASEMENT SYSTEM MC45",
+    description:
+      "MAGS CASEMENT SYSTEM MC45 is a non-insulated system for inward and outward opening windows and doors, designed according to the highest European quality standards. To guarantee superior quality and performance in every situation, the system has three gasket levels for inward and outward opening windows and doors. Through intelligent application, these multiple gaskets meet even the high air- and water tightness requirements of tropical regions. This simple, yet highly innovative design offers a very cost-efficient solution thanks to its optimised fabrication process. MC45 can be realised with all types of inward and outward opening windows and doors, with an extensive choice of accessories the perfect match of building concepts.",
+    images: [
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+    ],
+    performance: {
+      comfort: {
+        airTightness: "-",
+        acoustics: "-",
+        waterTightness: "-",
+        windLoadResistance: "-",
+      },
+      safety: {
+        burglarResistance: "-",
+      },
+    },
+    properties: {
+      maxDimensions: {
+        minHeightOfVent: "500 mm", // Same minimums as economy series
+        minWidthOfVent: "300 mm", // Same minimums as economy series
+        maxHeightOfVent: "3000 mm", // Much taller than economy (2100mm)
+        maxWidthOfVent: "900 mm", // Much wider than economy (700mm)
+        maxWeightOfVent: "150 kg", // 2.5x capacity of economy (60kg)
+      },
+      sightlines: {
+        minFrameWidthOutward: "45 mm", // Slightly smaller than economy (48mm)
+        minVentWidthOutward: "45 mm", // Slightly larger than economy (41mm)
+        minFrameVentWidthOutward: "90 mm", // Slightly larger than economy (88mm)
+        depthFrame: "45 mm", // Much smaller than MCE92 (92mm), larger than MCE28 (28mm)
+        depthVent: "45 mm, 51 mm", // Dual depth options vs single option in economy
+        minWidthTProfile: "66 mm, 72 mm", // Dual T-profile options vs single (61mm) in economy
+      },
+      glazing: {
+        rebateHeight: "21 mm", // Much higher than economy (12mm)
+        minGlassThickness: "5 mm", // Thicker minimum than economy (4mm)
+        glazingMethod: "Dry Glazing with EPDM or Natural Silicon",
+        maxGlassThickness: "35 mm", // Much thicker than economy (8mm)
+      },
+    },
+  },
+  mc105: {
+    name: "MC105 (3in1 Glass, Grill & Mesh)",
+    fullName: "MAGS CASEMENT SYSTEM 3in1 MC105",
+    description:
+      "MAGS CASEMENT SYSTEM 3in1 MC105 is a non-insulated system for inward and outward opening windows and doors, designed according to the highest European quality standards. To guarantee superior quality and performance in every situation, the system has three gasket levels for inward and outward opening windows and doors. Through intelligent application, these multiple gaskets meet even the high air- and water tightness requirements of tropical regions. This simple, yet highly innovative design offers a very cost-efficient solution thanks to its optimised fabrication process. MC105 can be realised with all types of inward and outward opening windows and doors, with security grill and mosquito net an extensive choice of accessories the perfect match of building concepts.",
+    images: [
+      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+    ],
+    performance: {
+      comfort: {
+        airTightness: "-",
+        acoustics: "-",
+        waterTightness: "-",
+        windLoadResistance: "-",
+      },
+      safety: {
+        burglarResistance: "-",
+      },
+    },
+    properties: {
+      maxDimensions: {
+        minHeightOfVent: "500 mm", // Same as MC45
+        minWidthOfVent: "300 mm", // Same as MC45
+        maxHeightOfVent: "3000 mm", // Same as MC45
+        maxWidthOfVent: "900 mm", // Same as MC45
+        maxWeightOfVent: "150 kg", // Same as MC45
+      },
+      sightlines: {
+        minFrameWidthOutward: "105 mm", // DIFFERENT: Much deeper than MC45 (45mm)
+        minVentWidthOutward: "45 mm", // Same as MC45
+        minFrameVentWidthOutward: "90 mm", // Same as MC45
+        depthFrame: "105 mm", // DIFFERENT: Much deeper than MC45 (45mm)
+        depthVent: "45 mm, 51 mm", // Same dual options as MC45
+        minWidthTProfile: "66 mm, 72 mm", // Same dual options as MC45
+      },
+      glazing: {
+        rebateHeight: "21 mm", // Same as MC45
+        minGlassThickness: "5 mm", // Same as MC45
+        glazingMethod: "Dry Glazing with EPDM or Natural Silicon",
+        maxGlassThickness: "35 mm", // Same as MC45
+      },
+    },
+  },
 };
 
 export default function ProductDetailPage() {
