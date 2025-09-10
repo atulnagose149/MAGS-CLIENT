@@ -44,6 +44,9 @@ export default function Navbar() {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md">
@@ -245,12 +248,13 @@ export default function Navbar() {
             Projects
           </button>
 
-          <button
-            onClick={() => scrollToSection("gallery")}
+          <Link
+            href="/gallery"
+            onClick={closeMobileMenu}
             className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium"
           >
             Gallery
-          </button>
+          </Link>
 
           <button
             onClick={() => scrollToSection("about")}
