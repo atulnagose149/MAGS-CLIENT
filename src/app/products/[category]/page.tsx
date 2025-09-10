@@ -161,7 +161,10 @@ const subcategoriesData = {
 export default function SubCategoryPage() {
   const params = useParams();
   const category = params.category as string;
-  const subcategories = subcategoriesData[category] || [];
+  const subcategories =
+    category in subcategoriesData
+      ? subcategoriesData[category as keyof typeof subcategoriesData]
+      : [];
 
   return (
     <div className="min-h-screen bg-neutral-50">
@@ -223,7 +226,10 @@ export default function SubCategoryPage() {
                   </p>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-neutral-500">
-                      {subcategory.products.length} Products
+                      {"products" in subcategory
+                        ? subcategory.products.length
+                        : 0}{" "}
+                      Products
                     </span>
                     <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">
                       <svg

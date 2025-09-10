@@ -86,7 +86,14 @@ export default function ProductsListPage() {
   const params = useParams();
   const category = params.category as string;
   const subcategory = params.subcategory as string;
-  const products = productsData[subcategory] || [];
+  const products =
+    subcategory in productsData
+      ? productsData[subcategory as keyof typeof productsData]
+      : [];
+
+  if (!products) {
+    return <div>Product not found</div>;
+  }
 
   return (
     <div className="min-h-screen bg-neutral-50">

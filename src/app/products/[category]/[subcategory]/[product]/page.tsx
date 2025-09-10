@@ -753,7 +753,10 @@ export default function ProductDetailPage() {
   const subcategory = params.subcategory as string;
   const productId = params.product as string;
 
-  const product = productData[productId];
+  const product =
+    productId in productData
+      ? productData[productId as keyof typeof productData]
+      : undefined;
 
   if (!product) {
     return <div>Product not found</div>;
