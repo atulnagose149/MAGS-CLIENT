@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -50,9 +51,16 @@ export default function Navbar() {
         {/* Logo */}
         <button
           onClick={() => scrollToSection("hero")}
-          className="text-xl sm:text-2xl font-bold cursor-pointer hover:text-amber-600 transition-colors duration-300"
+          className="cursor-pointer hover:opacity-80 transition-all duration-300 transform hover:scale-105"
         >
-          MAGS
+          <Image
+            src="/MAGS-LOGO.svg" // Correct path for public folder
+            alt="MAGS Logo"
+            width={120}
+            height={40}
+            className="h-8 sm:h-10 w-auto object-contain"
+            priority
+          />
         </button>
 
         {/* Desktop Menu */}
@@ -100,19 +108,25 @@ export default function Navbar() {
                 onClick={() => scrollToSection("products")}
                 className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
               >
-                Sliding Systems
+                Sliding Windows and Doors
               </button>
               <button
                 onClick={() => scrollToSection("products")}
                 className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
               >
-                Casement Systems
+                Casement Windows and Doors
               </button>
               <button
                 onClick={() => scrollToSection("products")}
                 className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
               >
-                Curtain Walls
+                Sliding Folding
+              </button>
+              <button
+                onClick={() => scrollToSection("products")}
+                className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+              >
+                Thermal Brake System
               </button>
             </div>
           </div>
@@ -124,12 +138,13 @@ export default function Navbar() {
             Projects
           </button>
 
-          <button
-            onClick={() => scrollToSection("gallery")}
+          {/* Gallery Link - Updated to navigate to new page */}
+          <Link
+            href="/gallery"
             className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium"
           >
             Gallery
-          </button>
+          </Link>
 
           <button
             onClick={() => scrollToSection("about")}
@@ -201,19 +216,25 @@ export default function Navbar() {
               onClick={() => scrollToSection("products")}
               className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
             >
-              Sliding Systems
+              Sliding Windows and Doors
             </button>
             <button
               onClick={() => scrollToSection("products")}
               className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
             >
-              Casement Systems
+              Casement Windows and Doors
             </button>
             <button
               onClick={() => scrollToSection("products")}
               className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
             >
-              Curtain Walls
+              Sliding Folding
+            </button>
+            <button
+              onClick={() => scrollToSection("products")}
+              className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+            >
+              Thermal Brake System
             </button>
           </div>
 
