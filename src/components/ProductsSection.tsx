@@ -4,11 +4,13 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const products = [
   {
+    id: 1,
     name: "Sliding Windows and Doors",
     description:
       "Premium aluminum sliding systems offering smooth operation, maximum natural light, and seamless indoor-outdoor living experiences.",
@@ -17,6 +19,7 @@ const products = [
       "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop",
   },
   {
+    id: 2,
     name: "Casement Windows and Doors",
     description:
       "Side-hinged windows and doors providing excellent ventilation, security, and energy efficiency with superior sealing performance.",
@@ -25,6 +28,7 @@ const products = [
       "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
   },
   {
+    id: 3,
     name: "Sliding Folding",
     description:
       "Wide-opening bi-fold door systems that create expansive openings, perfect for connecting interior spaces with outdoor areas.",
@@ -33,6 +37,7 @@ const products = [
       "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
   },
   {
+    id: 4,
     name: "Thermal Brake System",
     description:
       "Advanced thermal break technology providing superior insulation, energy efficiency, and noise reduction for modern buildings.",
@@ -92,18 +97,17 @@ export default function ProductsSection() {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {products.map((product, idx) => (
+          {products.map((product) => (
             <div
-              key={idx}
+              key={product.id}
               className="product-card bg-white rounded-2xl shadow-lg overflow-hidden border border-neutral-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
             >
-              <div className="h-48 sm:h-56 bg-neutral-200 overflow-hidden">
+              <div className="h-48 sm:h-56 bg-neutral-200 overflow-hidden relative">
                 <Image
                   src={product.image}
                   alt={product.name}
-                  width={1200}
-                  height={800}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="p-4 sm:p-6">
@@ -116,9 +120,12 @@ export default function ProductsSection() {
                 <p className="text-xs sm:text-sm text-neutral-500 italic mb-6">
                   {product.specs}
                 </p>
-                <button className="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95">
-                  Learn More
-                </button>
+                <Link
+                  href="/products"
+                  className="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 text-center inline-block"
+                >
+                  Explore Products
+                </Link>
               </div>
             </div>
           ))}
