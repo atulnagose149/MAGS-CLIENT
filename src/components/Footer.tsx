@@ -1,8 +1,11 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -34,14 +37,16 @@ export default function Footer() {
           {/* Logo & Description */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <Image
-                src="/MAGS-LOGO.svg"
-                alt="MAGS Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto object-contain"
-                priority
-              />
+              <Link href="/">
+                <Image
+                  src="/MAGS-LOGO.svg"
+                  alt="MAGS Logo"
+                  width={120}
+                  height={40}
+                  className="h-10 w-auto object-contain hover:opacity-80 transition-opacity duration-300"
+                  priority
+                />
+              </Link>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-6">
               In collaboration with our partners, we are committed to developing
@@ -109,9 +114,9 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                "Sliding Systems",
-                "Casement System",
-                "Thermal Break System",
+                "Sliding Windows and Doors",
+                "Casement Windows and Doors",
+                "Thermal Brake System",
                 "Sliding Folding",
                 "Façade",
                 "Aluminum Railing",
@@ -119,13 +124,23 @@ export default function Footer() {
                 "Mosquito Mesh",
               ].map((product, index) => (
                 <li key={index}>
-                  <button
-                    onClick={() => scrollToSection("products")}
-                    className="text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm flex items-center group"
-                  >
-                    <span className="w-1.5 h-1.5 bg-amber-600 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
-                    {product}
-                  </button>
+                  {pathname === "/" ? (
+                    <button
+                      onClick={() => scrollToSection("products")}
+                      className="text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm flex items-center group"
+                    >
+                      <span className="w-1.5 h-1.5 bg-amber-600 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
+                      {product}
+                    </button>
+                  ) : (
+                    <Link
+                      href="/#products"
+                      className="text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm flex items-center group"
+                    >
+                      <span className="w-1.5 h-1.5 bg-amber-600 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
+                      {product}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -209,21 +224,72 @@ export default function Footer() {
                   Quick Links
                 </h4>
                 <div className="space-y-3">
-                  {[
-                    { name: "Home", id: "hero" },
-                    { name: "About Us", id: "about" },
-                    { name: "Projects", id: "projects" },
-                    { name: "Gallery", id: "gallery" },
-                    { name: "Contact", id: "contact" },
-                  ].map((link, index) => (
+                  {/* Home Link */}
+                  <Link
+                    href="/"
+                    className="block text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm"
+                  >
+                    Home
+                  </Link>
+
+                  {/* About Us - Conditional Navigation */}
+                  {pathname === "/" ? (
                     <button
-                      key={index}
-                      onClick={() => scrollToSection(link.id)}
+                      onClick={() => scrollToSection("about")}
                       className="block text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm"
                     >
-                      {link.name}
+                      About Us
                     </button>
-                  ))}
+                  ) : (
+                    <Link
+                      href="/#about"
+                      className="block text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm"
+                    >
+                      About Us
+                    </Link>
+                  )}
+
+                  {/* Projects - Conditional Navigation */}
+                  {pathname === "/" ? (
+                    <button
+                      onClick={() => scrollToSection("projects")}
+                      className="block text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm"
+                    >
+                      Projects
+                    </button>
+                  ) : (
+                    <Link
+                      href="/#projects"
+                      className="block text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm"
+                    >
+                      Projects
+                    </Link>
+                  )}
+
+                  {/* Gallery - Always Link to Gallery Page */}
+                  <Link
+                    href="/gallery"
+                    className="block text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm"
+                  >
+                    Gallery
+                  </Link>
+
+                  {/* Contact - Conditional Navigation */}
+                  {pathname === "/" ? (
+                    <button
+                      onClick={() => scrollToSection("contact")}
+                      className="block text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm"
+                    >
+                      Contact
+                    </button>
+                  ) : (
+                    <Link
+                      href="/#contact"
+                      className="block text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm"
+                    >
+                      Contact
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

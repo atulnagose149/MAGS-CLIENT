@@ -2,10 +2,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isDesktopDropdownOpen, setIsDesktopDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   // Smooth scroll to section function
   const scrollToSection = (sectionId: string) => {
@@ -44,6 +46,7 @@ export default function Navbar() {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
+
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
@@ -51,29 +54,55 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
-        {/* Logo */}
-        <button
-          onClick={() => scrollToSection("hero")}
-          className="cursor-pointer hover:opacity-80 transition-all duration-300 transform hover:scale-105"
-        >
-          <Image
-            src="/MAGS-LOGO.svg" // Correct path for public folder
-            alt="MAGS Logo"
-            width={120}
-            height={40}
-            className="h-8 sm:h-10 w-auto object-contain"
-            priority
-          />
-        </button>
+        {/* Logo - Conditional Navigation */}
+        {pathname === "/" ? (
+          <button
+            onClick={() => scrollToSection("hero")}
+            className="cursor-pointer hover:opacity-80 transition-all duration-300 transform hover:scale-105"
+          >
+            <Image
+              src="/MAGS-LOGO.svg"
+              alt="MAGS Logo"
+              width={120}
+              height={40}
+              className="h-8 sm:h-10 w-auto object-contain"
+              priority
+            />
+          </button>
+        ) : (
+          <Link
+            href="/"
+            className="cursor-pointer hover:opacity-80 transition-all duration-300 transform hover:scale-105"
+          >
+            <Image
+              src="/MAGS-LOGO.svg"
+              alt="MAGS Logo"
+              width={120}
+              height={40}
+              className="h-8 sm:h-10 w-auto object-contain"
+              priority
+            />
+          </Link>
+        )}
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-4 lg:space-x-6 items-center">
-          <button
-            onClick={() => scrollToSection("hero")}
-            className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium"
-          >
-            Home
-          </button>
+          {/* Home - Conditional Navigation */}
+          {pathname === "/" ? (
+            <button
+              onClick={() => scrollToSection("hero")}
+              className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium"
+            >
+              Home
+            </button>
+          ) : (
+            <Link
+              href="/"
+              className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium"
+            >
+              Home
+            </Link>
+          )}
 
           {/* Products Dropdown */}
           <div className="relative dropdown-container">
@@ -101,47 +130,92 @@ export default function Navbar() {
 
             {/* Desktop Dropdown */}
             <div
-              className={`absolute top-full left-0 bg-white shadow-lg py-2 rounded-lg min-w-48 border transition-all duration-300 transform ${
+              className={`absolute top-full left-0 bg-white shadow-lg py-2 rounded-lg min-w-60 border transition-all duration-300 transform ${
                 isDesktopDropdownOpen
                   ? "opacity-100 scale-100 translate-y-0"
                   : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
               }`}
             >
-              <button
-                onClick={() => scrollToSection("products")}
-                className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
-              >
-                Sliding Windows and Doors
-              </button>
-              <button
-                onClick={() => scrollToSection("products")}
-                className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
-              >
-                Casement Windows and Doors
-              </button>
-              <button
-                onClick={() => scrollToSection("products")}
-                className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
-              >
-                Sliding Folding
-              </button>
-              <button
-                onClick={() => scrollToSection("products")}
-                className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
-              >
-                Thermal Brake System
-              </button>
+              {pathname === "/" ? (
+                <>
+                  <button
+                    onClick={() => scrollToSection("products")}
+                    className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                  >
+                    Sliding Windows and Doors
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("products")}
+                    className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                  >
+                    Casement Windows and Doors
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("products")}
+                    className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                  >
+                    Sliding Folding
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("products")}
+                    className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                  >
+                    Thermal Brake System
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/#products"
+                    className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                    onClick={() => setIsDesktopDropdownOpen(false)}
+                  >
+                    Sliding Windows and Doors
+                  </Link>
+                  <Link
+                    href="/#products"
+                    className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                    onClick={() => setIsDesktopDropdownOpen(false)}
+                  >
+                    Casement Windows and Doors
+                  </Link>
+                  <Link
+                    href="/#products"
+                    className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                    onClick={() => setIsDesktopDropdownOpen(false)}
+                  >
+                    Sliding Folding
+                  </Link>
+                  <Link
+                    href="/#products"
+                    className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                    onClick={() => setIsDesktopDropdownOpen(false)}
+                  >
+                    Thermal Brake System
+                  </Link>
+                </>
+              )}
             </div>
           </div>
 
-          <button
-            onClick={() => scrollToSection("projects")}
-            className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium"
-          >
-            Projects
-          </button>
+          {/* Projects - Conditional Navigation */}
+          {pathname === "/" ? (
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium"
+            >
+              Projects
+            </button>
+          ) : (
+            <Link
+              href="/#projects"
+              className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium"
+            >
+              Projects
+            </Link>
+          )}
 
-          {/* Gallery Link - Updated to navigate to new page */}
+          {/* Gallery - Always Link to Gallery Page */}
           <Link
             href="/gallery"
             className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium"
@@ -149,19 +223,39 @@ export default function Navbar() {
             Gallery
           </Link>
 
-          <button
-            onClick={() => scrollToSection("about")}
-            className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium"
-          >
-            About Us
-          </button>
+          {/* About Us - Conditional Navigation */}
+          {pathname === "/" ? (
+            <button
+              onClick={() => scrollToSection("about")}
+              className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium"
+            >
+              About Us
+            </button>
+          ) : (
+            <Link
+              href="/#about"
+              className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium"
+            >
+              About Us
+            </Link>
+          )}
 
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium"
-          >
-            Contact
-          </button>
+          {/* Contact - Conditional Navigation */}
+          {pathname === "/" ? (
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium"
+            >
+              Contact
+            </button>
+          ) : (
+            <Link
+              href="/#contact"
+              className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium"
+            >
+              Contact
+            </Link>
+          )}
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -203,51 +297,109 @@ export default function Navbar() {
         }`}
       >
         <div className="px-4 sm:px-6 py-4 space-y-1">
-          <button
-            onClick={() => scrollToSection("hero")}
-            className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium"
-          >
-            Home
-          </button>
+          {/* Mobile Home */}
+          {pathname === "/" ? (
+            <button
+              onClick={() => scrollToSection("hero")}
+              className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium"
+            >
+              Home
+            </button>
+          ) : (
+            <Link
+              href="/"
+              onClick={closeMobileMenu}
+              className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium"
+            >
+              Home
+            </Link>
+          )}
 
           {/* Mobile Products Section */}
           <div className="border-l-2 border-amber-200 pl-4">
             <div className="text-sm text-gray-500 mb-2 font-medium">
               Products
             </div>
-            <button
-              onClick={() => scrollToSection("products")}
-              className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
-            >
-              Sliding Windows and Doors
-            </button>
-            <button
-              onClick={() => scrollToSection("products")}
-              className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
-            >
-              Casement Windows and Doors
-            </button>
-            <button
-              onClick={() => scrollToSection("products")}
-              className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
-            >
-              Sliding Folding
-            </button>
-            <button
-              onClick={() => scrollToSection("products")}
-              className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
-            >
-              Thermal Brake System
-            </button>
+            {pathname === "/" ? (
+              <>
+                <button
+                  onClick={() => scrollToSection("products")}
+                  className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                >
+                  Sliding Windows and Doors
+                </button>
+                <button
+                  onClick={() => scrollToSection("products")}
+                  className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                >
+                  Casement Windows and Doors
+                </button>
+                <button
+                  onClick={() => scrollToSection("products")}
+                  className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                >
+                  Sliding Folding
+                </button>
+                <button
+                  onClick={() => scrollToSection("products")}
+                  className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                >
+                  Thermal Brake System
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/#products"
+                  onClick={closeMobileMenu}
+                  className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                >
+                  Sliding Windows and Doors
+                </Link>
+                <Link
+                  href="/#products"
+                  onClick={closeMobileMenu}
+                  className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                >
+                  Casement Windows and Doors
+                </Link>
+                <Link
+                  href="/#products"
+                  onClick={closeMobileMenu}
+                  className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                >
+                  Sliding Folding
+                </Link>
+                <Link
+                  href="/#products"
+                  onClick={closeMobileMenu}
+                  className="block w-full text-left py-2 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300"
+                >
+                  Thermal Brake System
+                </Link>
+              </>
+            )}
           </div>
 
-          <button
-            onClick={() => scrollToSection("projects")}
-            className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium"
-          >
-            Projects
-          </button>
+          {/* Mobile Projects */}
+          {pathname === "/" ? (
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium"
+            >
+              Projects
+            </button>
+          ) : (
+            <Link
+              href="/#projects"
+              onClick={closeMobileMenu}
+              className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium"
+            >
+              Projects
+            </Link>
+          )}
 
+          {/* Mobile Gallery */}
           <Link
             href="/gallery"
             onClick={closeMobileMenu}
@@ -256,19 +408,41 @@ export default function Navbar() {
             Gallery
           </Link>
 
-          <button
-            onClick={() => scrollToSection("about")}
-            className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium"
-          >
-            About Us
-          </button>
+          {/* Mobile About Us */}
+          {pathname === "/" ? (
+            <button
+              onClick={() => scrollToSection("about")}
+              className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium"
+            >
+              About Us
+            </button>
+          ) : (
+            <Link
+              href="/#about"
+              onClick={closeMobileMenu}
+              className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium"
+            >
+              About Us
+            </Link>
+          )}
 
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium"
-          >
-            Contact
-          </button>
+          {/* Mobile Contact */}
+          {pathname === "/" ? (
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium"
+            >
+              Contact
+            </button>
+          ) : (
+            <Link
+              href="/#contact"
+              onClick={closeMobileMenu}
+              className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium"
+            >
+              Contact
+            </Link>
+          )}
         </div>
       </div>
     </nav>

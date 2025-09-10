@@ -9,36 +9,36 @@ gsap.registerPlugin(ScrollTrigger);
 
 const products = [
   {
-    name: "MS11 Sliding System",
+    name: "Sliding Windows and Doors",
     description:
-      "Slim-profile sliding system designed for elegance and durability, ideal for large-span openings.",
-    specs: "Max panel 300kg • Glass 6–32mm",
+      "Premium aluminum sliding systems offering smooth operation, maximum natural light, and seamless indoor-outdoor living experiences.",
+    specs: "Max panel 300kg • Glass 6–32mm • Weather sealed",
     image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    name: "MS65 Curtain Wall",
+    name: "Casement Windows and Doors",
     description:
-      "High-performance facade system engineered for commercial buildings and high-rise projects.",
-    specs: "Thermally broken • Custom finishes",
-    image:
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    name: "MC45 Casement",
-    description:
-      "Versatile casement system providing strength, airtightness, and excellent thermal insulation.",
-    specs: "Uw ≥ 1.6 W/m²K • Glass 24–42mm",
-    image:
-      "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    name: "Folding Doors",
-    description:
-      "Wide-opening bi-fold systems for seamless indoor-outdoor living with smooth operation.",
-    specs: "Max 7 panels • 90° corner opening",
+      "Side-hinged windows and doors providing excellent ventilation, security, and energy efficiency with superior sealing performance.",
+    specs: "Uw ≥ 1.6 W/m²K • Glass 24–42mm • Multi-point locking",
     image:
       "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+  },
+  {
+    name: "Sliding Folding",
+    description:
+      "Wide-opening bi-fold door systems that create expansive openings, perfect for connecting interior spaces with outdoor areas.",
+    specs: "Max 7 panels • 90° corner opening • Smooth rollers",
+    image:
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+  },
+  {
+    name: "Thermal Brake System",
+    description:
+      "Advanced thermal break technology providing superior insulation, energy efficiency, and noise reduction for modern buildings.",
+    specs: "Thermally broken • U-value ≤ 1.4 • Sound reduction 42dB",
+    image:
+      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
   },
 ];
 
@@ -75,15 +75,15 @@ export default function ProductsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-neutral-50 text-neutral-900 py-24 px-6 md:px-16 lg:px-28"
+      className="relative bg-neutral-50 text-neutral-900 py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-900">
             Our Products
           </h2>
-          <p className="mt-4 text-lg text-neutral-600 max-w-2xl mx-auto">
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl text-neutral-600 max-w-3xl mx-auto">
             Precision-engineered aluminum glazing systems designed for
             architects, builders, and developers who demand performance and
             aesthetics.
@@ -91,32 +91,32 @@ export default function ProductsSection() {
         </div>
 
         {/* Product Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {products.map((product, idx) => (
             <div
               key={idx}
-              className="product-card bg-white rounded-2xl shadow-lg overflow-hidden border border-neutral-200 hover:shadow-2xl transition-transform duration-300 hover:-translate-y-2"
+              className="product-card bg-white rounded-2xl shadow-lg overflow-hidden border border-neutral-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
             >
-              <div className="h-56 bg-neutral-200 overflow-hidden">
+              <div className="h-48 sm:h-56 bg-neutral-200 overflow-hidden">
                 <Image
                   src={product.image}
                   alt={product.name}
                   width={1200}
                   height={800}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-amber-600">
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-amber-600 mb-3">
                   {product.name}
                 </h3>
-                <p className="mt-3 text-neutral-700 text-sm">
+                <p className="text-neutral-700 text-sm leading-relaxed mb-4">
                   {product.description}
                 </p>
-                <p className="mt-4 text-sm text-neutral-500 italic">
+                <p className="text-xs sm:text-sm text-neutral-500 italic mb-6">
                   {product.specs}
                 </p>
-                <button className="mt-6 w-full bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-lg transition-colors">
+                <button className="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95">
                   Learn More
                 </button>
               </div>
@@ -125,15 +125,15 @@ export default function ProductsSection() {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16 bg-amber-50 rounded-2xl p-8 border border-amber-200">
-          <h3 className="text-2xl font-bold text-neutral-900">
+        <div className="text-center mt-12 sm:mt-16 bg-gradient-to-r from-amber-50 to-amber-100 rounded-2xl p-6 sm:p-8 border border-amber-200">
+          <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-2">
             Need a Custom Solution?
           </h3>
-          <p className="mt-2 text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto mb-6">
             Our engineering team can design and manufacture custom glazing
             systems tailored to your specific project requirements.
           </p>
-          <button className="mt-6 bg-neutral-900 hover:bg-amber-600 text-white font-medium py-3 px-8 rounded-lg transition-colors">
+          <button className="bg-neutral-900 hover:bg-amber-600 text-white font-medium py-3 px-6 sm:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95">
             Contact Our Experts
           </button>
         </div>

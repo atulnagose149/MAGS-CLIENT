@@ -5,7 +5,6 @@ import OurSolution from "@/components/OurSolution";
 import ProductsSection from "@/components/ProductsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import GallerySection from "@/components/GallerySection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 
@@ -33,9 +32,9 @@ export default function HomePage() {
       <div id="testimonials">
         <TestimonialsSection />
       </div>
-      <div id="gallery">
+      {/* <div id="gallery">
         <GallerySection />
-      </div>
+      </div> */}
       <div id="about">
         <AboutSection />
       </div>
