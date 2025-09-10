@@ -654,6 +654,97 @@ const productData = {
       },
     },
   },
+  "ms22-panoramic": {
+    name: "MS22 Panoramic",
+    fullName: "MAGS PREMIUM MINIMAL PANORAMIC SLIDING SYSTEM MS22",
+    description:
+      "MAGS PREMIUM MINIMAL PANORAMIC SLIDING SYSTEM MS22 Enjoy ultimate performance! The minimalist panoramic design of the MS22 sliding door creates large transparent surfaces with a light, sleek, and elegant appearance. This fully transparent and accessible sliding door seamlessly extends the house's interior to the outside. Despite the minimal visual sidelines, the system's high strength allows MS22 to carry the weight of a large sliding glass pane of up to 300 kilograms. Fixed panels up to 600 kg. This in combination with the high energy performance and the minimalistic look makes this product the best solution architecture.",
+    images: [
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+    ],
+    performance: {
+      comfort: {
+        airTightness: "-",
+        acoustics: "-",
+        waterTightness: "-",
+        windLoadResistance: "-",
+      },
+      safety: {
+        burglarResistance: "-",
+      },
+    },
+    properties: {
+      maxDimensions: {
+        minHeightOfVent: "1000 mm", // Large minimums for panoramic applications
+        minWidthOfVent: "1000 mm", // Large minimums for panoramic applications
+        maxHeightOfVent: "3200 mm", // Same as MS22 Minimal
+        maxWidthOfVent: "2400 mm", // Same as MS22 Minimal
+        maxWeightOfVent: "300 kg", // Same as MS22 Minimal
+      },
+      sightlines: {
+        frameHeight: "48 mm", // Same as MS22 Minimal
+        visibleVentWidth: "29 mm", // Same narrowest profile as MS22 Minimal
+        ventSystemDepth: "42 mm", // Same as MS22 Minimal
+        interlockingView: "22 mm", // Same as MS22 Minimal
+        visibleMeetingSection: "81 mm, 42 mm", // Same dual options as MS22 Minimal
+        depthFrame2Rail: "114 mm", // Same as MS22 Minimal
+        depthFrame3Rail: "170 mm", // Same as MS22 Minimal
+      },
+      glazing: {
+        rebateHeight: "15 mm",
+        minGlassThickness: "5 mm",
+        glazingMethod: "Dry Glazing with EPDM or Natural Silicon",
+        maxGlassThickness: "34 mm", // Same thickest glass capability as MS22 Minimal
+      },
+    },
+  },
+  "ms30-slim-heavy-duty-lift-and-slide": {
+    name: "MS30 Slim Heavy-Duty Lift and Slide",
+    fullName: "MAGS Slim Heavy-Duty Lift and Slide MS30",
+    description:
+      "MS30 Slim Heavy-Duty lift and Slide system provides lifting sliding for better seating performance. Positioned at will, easy to adjust the ventilation area. Offers sound and heat insulation, making it energy efficient. This advanced system combines the convenience of sliding doors with the sealing performance of lift-and-slide technology, providing superior thermal and acoustic insulation.",
+    images: [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+    ],
+    performance: {
+      comfort: {
+        airTightness: "-",
+        acoustics: "-",
+        waterTightness: "-",
+        windLoadResistance: "-",
+      },
+      safety: {
+        burglarResistance: "-",
+      },
+    },
+    properties: {
+      maxDimensions: {
+        minHeightOfVent: "2100 mm", // Large minimums for heavy-duty applications
+        minWidthOfVent: "1500 mm", // Large minimums for heavy-duty applications
+        maxHeightOfVent: "3500 mm", // Shorter than MS18 Panoramic (4500mm)
+        maxWidthOfVent: "3600 mm", // Widest in the entire MAGS range
+        maxWeightOfVent: "300 kg, 400 kg, 600 kg", // Multiple capacity options
+      },
+      sightlines: {
+        frameHeight: "45 mm", // Between slim (31mm) and structural (71mm)
+        visibleVentWidth: "75 mm", // Widest visible profile in the range
+        ventSystemDepth: "53 mm", // Deepest system depth for lift mechanism
+        visibleMeetingSection: "160 mm", // Largest meeting section (single option)
+        depthFrame2Rail: "131 mm", // Deeper than standard systems for lift mechanism
+        interlockingView: "30 mm", // Highest interlocking in entire range
+      },
+      glazing: {
+        rebateHeight: "20 mm", // Highest rebate height for heavy glass
+        minGlassThickness: "5 mm",
+        glazingMethod: "Dry Glazing with EPDM or Natural Silicon",
+        maxGlassThickness: "45 mm", // Thickest glass capability in entire range
+      },
+    },
+  },
 };
 
 export default function ProductDetailPage() {

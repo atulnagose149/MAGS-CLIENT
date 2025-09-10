@@ -139,19 +139,21 @@ const subcategoriesData = {
     {
       id: "ms22-panoramic",
       name: "MS22 Panoramic",
-      description: "Panoramic sliding system for large transparent surfaces",
+      description:
+        "PREMIUM MINIMAL PANORAMIC sliding system with narrowest visible profile for large transparent surfaces",
       image:
         "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      specs: "Panoramic views • Large surfaces",
+      specs: "Max weight: 300kg • Glass: 5-34mm • 29mm visible width",
     },
     {
       id: "ms30-slim-heavy-duty-lift-and-slide",
       name: "MS30 Slim Heavy-Duty Lift and Slide",
       description:
-        "Heavy-duty lift and slide system supporting 300kg, 400kg, 600kg panels",
+        "Heavy-duty lift and slide system with adjustable ventilation and superior sealing performance",
       image:
         "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
-      specs: "Heavy-duty • Up to 600kg capacity",
+      specs:
+        "Max weight: 300/400/600kg • Glass: 5-45mm • Lift and slide technology",
     },
   ],
 };
