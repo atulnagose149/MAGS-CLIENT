@@ -925,6 +925,324 @@ const productData = {
       },
     },
   },
+  msfd50: {
+    name: "MSFD50",
+    fullName: "MAGS Sliding Folding MSFD50",
+    description:
+      "MAGS Sliding folding MSFD50 is high insulation and comfort with maximal transparency and aesthetics, allowing for large and heavy glass spans to really open up the space while ensuring optimal insulation. This high performance system offers different opening types, both inward and outward to meet all possible requirements. Apart from the standard folding element, this can feature a main door principle, in which the first leaf is used as an entrance door without affecting the other elements. MAGS Sliding Folding MSFD50 is available with zero threshold solutions, from high performance to low and even flush thresholds, in order to perfectly match all comfort requirements. Additionally, the concept can be perfectly combined with the concept system for windows and doors.",
+    images: [
+      "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+    ],
+    performance: {
+      comfort: {
+        airTightness: "-",
+        acoustics: "-",
+        waterTightness: "-",
+        windLoadResistance: "-",
+      },
+      safety: {
+        burglarResistance: "-",
+      },
+    },
+    properties: {
+      maxDimensions: {
+        minHeightOfVent: "600 mm",
+        minWidthOfVent: "400 mm",
+        maxHeightOfVent: "3000 mm",
+        maxWidthOfVent: "1200 mm",
+        maxWeightOfVent: "90 kg",
+      },
+      sightlines: {
+        minWidthMeetingSection: "163 mm, 104 mm",
+        minWidthTProfile: "72 mm",
+        minHeightThreshold: "5 mm",
+        depthFrame: "71 mm",
+        depthVent: "50 mm",
+        depthFrameVent: "71 mm",
+      },
+      glazing: {
+        rebateHeight: "21 mm",
+        minGlassThickness: "5 mm",
+        glazingMethod: "Dry Glazing with EPDM or Natural Silicon",
+        maxGlassThickness: "35 mm",
+      },
+    },
+  },
+  "msfd58-premium-folding-door": {
+    name: "MSFD58 Premium Folding Door",
+    fullName: "MAGS MSFD58 Premium Folding Door",
+    description:
+      "MAGS MSFD58 Premium Folding Door features anti-pinch design with enhanced noise reduction and multiple opening options. This premium folding system can be designed as one-piece or thermal break configuration to meet specific project requirements. The system offers superior performance with advanced safety features and acoustic properties, making it ideal for high-end residential and commercial applications where both functionality and comfort are paramount.",
+    images: [
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+    ],
+    performance: {
+      comfort: {
+        airTightness: "-",
+        acoustics: "-",
+        waterTightness: "-",
+        windLoadResistance: "-",
+      },
+      safety: {
+        burglarResistance: "-",
+      },
+    },
+    properties: {
+      maxDimensions: {
+        minHeightOfVent: "600 mm",
+        minWidthOfVent: "400 mm",
+        maxHeightOfVent: "3600 mm",
+        maxWidthOfVent: "1200 mm",
+        maxWeightOfVent: "120 kg",
+      },
+      sightlines: {
+        minWidthMeetingSection: "106 mm",
+        minWidthTProfile: "58 mm",
+        minHeightThreshold: "15 mm",
+        depthFrame: "67 mm",
+        depthVent: "58 mm",
+        depthFrameVent: "67 mm",
+      },
+      glazing: {
+        rebateHeight: "21 mm",
+        minGlassThickness: "5 mm",
+        glazingMethod: "Dry Glazing with EPDM or Natural Silicon",
+        maxGlassThickness: "35 mm",
+      },
+    },
+  },
+  "msth75-sliding": {
+    name: "MSTH75 Sliding",
+    fullName: "MAGS MSTH75 Thermal Break Sliding System",
+    description:
+      "MAGS MSTH75 is a highly-insulated sliding system that combines elegance with performance and security. This unique sliding system is characterised by thermal break profiles, allowing the integration of large windows and doors for maximum views, in combination with burglary resistance. The integrated innovative technologies guarantee ultimate performances with regard to wind and water tightness and thermal insulation, meeting with the highest standards. The sliding system MSTH75 offers you all design freedom to create contemporary living spaces, combining ultimate brightness with maximum comfort and security.",
+    images: [
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+    ],
+    performance: {
+      comfort: {
+        airTightness: "-",
+        acoustics: "-",
+        waterTightness: "-",
+        windLoadResistance: "-",
+      },
+      safety: {
+        burglarResistance: "-",
+      },
+    },
+    properties: {
+      maxDimensions: {
+        minHeightOfVent: "600 mm",
+        minWidthOfVent: "450 mm",
+        maxHeightOfVent: "3000 mm",
+        maxWidthOfVent: "2400 mm",
+        maxWeightOfVent: "200 kg",
+      },
+      sightlines: {
+        frameHeight: "41 mm",
+        visibleVentWidth: "75 mm",
+        visibleMeetingSection: "155 mm",
+        ventSystemDepth: "34 mm, 77 mm",
+        depthFrame2Rail: "53 mm",
+        depthFrame3Rail: "95 mm, 135 mm",
+        interlockingView: "75 mm",
+      },
+      glazing: {
+        rebateHeight: "17 mm",
+        minGlassThickness: "20 mm",
+        glazingMethod: "Dry Glazing with EPDM or Natural Silicon",
+        maxGlassThickness: "24 mm",
+      },
+    },
+  },
+  "150-panoramic-sliding-doors": {
+    name: "150 Panoramic Sliding Doors",
+    fullName: "MAGS 150 PANORAMIC SLIDING DOORS (Imported Hybrid System)",
+    description:
+      "MAGS 150 PANORAMIC SLIDING DOORS is an advanced thermal brake system featuring imported hybrid technology. The visible surface of the vertical door frame is only 25mm, creating an ultra-minimal aesthetic. This premium system features double rows of customized stainless steel pulleys, with the load-bearing capacity of a single fan reaching up to 1500kg. The micro-slit lower track design provides superior drainage performance. This high-performance panoramic sliding system combines cutting-edge engineering with thermal break technology for ultimate energy efficiency and structural integrity.",
+    images: [
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+    ],
+    performance: {
+      comfort: {
+        airTightness: "-",
+        acoustics: "-",
+        waterTightness: "-",
+        windLoadResistance: "-",
+      },
+      safety: {
+        burglarResistance: "-",
+      },
+    },
+    properties: {
+      maxDimensions: {
+        minHeightOfVent: "1500 mm",
+        minWidthOfVent: "1500 mm",
+        maxHeightOfVent: "4500 mm",
+        maxWidthOfVent: "3000 mm",
+        maxWeightOfVent: "1500 kg",
+      },
+      sightlines: {
+        frameHeight: "60 mm",
+        visibleVentWidth: "40 mm",
+        ventSystemDepth: "50 mm",
+        interlockingView: "25 mm",
+        visibleMeetingSection: "130 mm",
+        depthFrame2Rail: "115 mm",
+        depthFrame3Rail: "234 mm",
+      },
+      glazing: {
+        rebateHeight: "14 mm",
+        minGlassThickness: "5 mm",
+        glazingMethod: "Dry Glazing with EPDM or Natural Silicon",
+        maxGlassThickness: "45 mm",
+      },
+    },
+  },
+  "msth35-slim-sliding": {
+    name: "MSTH35 Slim Sliding",
+    fullName: "MAGS MSTH35 Slim Thermal Break Sliding System",
+    description:
+      "MAGS MSTH35 is a highly-insulated sliding system that combines elegance with performance and security. This unique sliding system is characterised by thermal break profiles, allowing the integration of large windows and doors for maximum views, in combination with burglary resistance. The integrated innovative technologies guarantee ultimate performances with regard to wind and water tightness and thermal insulation, meeting with the highest standards. The sliding system MSTH35 offers you all design freedom to create contemporary living spaces, combining ultimate brightness with maximum comfort and security.",
+    images: [
+      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+    ],
+    performance: {
+      comfort: {
+        airTightness: "-",
+        acoustics: "-",
+        waterTightness: "-",
+        windLoadResistance: "-",
+      },
+      safety: {
+        burglarResistance: "-",
+      },
+    },
+    properties: {
+      maxDimensions: {
+        minHeightOfVent: "600 mm",
+        minWidthOfVent: "450 mm",
+        maxHeightOfVent: "3000 mm",
+        maxWidthOfVent: "2400 mm",
+        maxWeightOfVent: "200 kg",
+      },
+      sightlines: {
+        frameHeight: "41 mm",
+        visibleVentWidth: "63 mm",
+        visibleMeetingSection: "147 mm",
+        ventSystemDepth: "40 mm",
+        interlockingView: "35 mm",
+        depthFrame2Rail: "67 mm",
+        depthFrame3Rail: "122 mm, 177 mm",
+      },
+      glazing: {
+        rebateHeight: "17 mm",
+        minGlassThickness: "20 mm",
+        glazingMethod: "Dry Glazing with EPDM or Natural Silicon",
+        maxGlassThickness: "27 mm",
+      },
+    },
+  },
+  "mcth50-casement-windows": {
+    name: "MCTH50 Casement Windows",
+    fullName: "MAGS CASEMENT SYSTEM MCTH50",
+    description:
+      "MAGS CASEMENT SYSTEM MCTH50 is a insulated system for inward and outward opening windows and doors, designed according to the highest European quality standards. To guarantee superior quality and performance in every situation, the system has three gasket levels for inward and outward opening windows and doors. Through intelligent application, these multiple gaskets meet even the high air- and water tightness requirements of tropical regions. This simple, yet highly innovative design offers a very cost-efficient solution thanks to its optimised fabrication process. MCTH50 can be realised with all types of inward and outward opening windows and doors, with an extensive choice of accessories the perfect match of building concepts.",
+    images: [
+      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+    ],
+    performance: {
+      comfort: {
+        airTightness: "-",
+        acoustics: "-",
+        waterTightness: "-",
+        windLoadResistance: "-",
+      },
+      safety: {
+        burglarResistance: "-",
+      },
+    },
+    properties: {
+      maxDimensions: {
+        minHeightOfVent: "500 mm",
+        minWidthOfVent: "300 mm",
+        maxHeightOfVent: "3000 mm",
+        maxWidthOfVent: "900 mm",
+        maxWeightOfVent: "150 kg",
+      },
+      sightlines: {
+        minFrameWidthOutward: "50 mm",
+        minVentWidthOutward: "33 mm, 41 mm",
+        minFrameVentWidthOutward: "100 mm, 112 mm",
+        depthFrame: "50 mm",
+        depthVent: "60 mm",
+        minWidthTProfile: "67 mm",
+      },
+      glazing: {
+        rebateHeight: "17 mm",
+        minGlassThickness: "20 mm",
+        glazingMethod: "Dry Glazing with EPDM or Natural Silicon",
+        maxGlassThickness: "35 mm",
+      },
+    },
+  },
+  "mdth50-casement-doors": {
+    name: "MDTH50 Casement Doors",
+    fullName: "MAGS CASEMENT DOORS SYSTEM MDTH50",
+    description:
+      "MAGS CASEMENT DOORS SYSTEM MDTH50 is a insulated system for inward and outward opening doors, designed according to the highest European quality standards. To guarantee superior quality and performance in every situation, the system has three gasket levels for inward and outward opening doors. Through intelligent application, these multiple gaskets meet even the high air- and water tightness requirements of tropical regions. This simple, yet highly innovative design offers a very cost-efficient solution thanks to its optimised fabrication process. MDTH50 can be realised with all types of inward and outward opening doors, with an extensive choice of accessories the perfect match of building concepts.",
+    images: [
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+    ],
+    performance: {
+      comfort: {
+        airTightness: "-",
+        acoustics: "-",
+        waterTightness: "-",
+        windLoadResistance: "-",
+      },
+      safety: {
+        burglarResistance: "-",
+      },
+    },
+    properties: {
+      maxDimensions: {
+        minHeightOfVent: "500 mm",
+        minWidthOfVent: "300 mm",
+        maxHeightOfVent: "3000 mm",
+        maxWidthOfVent: "900 mm",
+        maxWeightOfVent: "150 kg",
+      },
+      sightlines: {
+        minFrameWidthOutward: "50 mm",
+        minVentWidthOutward: "41 mm",
+        minFrameVentWidthOutward: "112 mm",
+        depthFrame: "50 mm",
+        depthVent: "60 mm",
+        minWidthTProfile: "67 mm",
+      },
+      glazing: {
+        rebateHeight: "17 mm",
+        minGlassThickness: "20 mm",
+        glazingMethod: "Dry Glazing with EPDM or Natural Silicon",
+        maxGlassThickness: "35 mm",
+      },
+    },
+  },
 };
 
 export default function ProductDetailPage() {

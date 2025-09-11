@@ -59,7 +59,10 @@ const subcategoriesData = {
       description: "Affordable casement solutions with reliable performance",
       image:
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
-      products: ["MCE28", "MCE92"],
+      products: [
+        "MCE28 Economy Casement",
+        "MCE92 (Economy 3in1 Glass, Grill & Mesh)",
+      ],
     },
     {
       id: "premium-casement",
@@ -67,96 +70,42 @@ const subcategoriesData = {
       description: "High-performance casement systems with advanced features",
       image:
         "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
-      products: ["MC45", "MC105", "MD45"],
-    },
-    {
-      id: "premium-casement",
-      name: "Premium Casement",
-      description: "High-performance casement systems with advanced features",
-      image:
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
-      products: ["MC45", "MC105", "MD45"],
+      products: ["MC45", "MC105 (3in1 Glass, Grill & Mesh)", "MD45"],
     },
   ],
-  "premium-doors-sliding-system": [
+  "sliding-folding": [
     {
-      id: "ms11",
-      name: "MS11",
+      id: "folding-systems",
+      name: "Sliding Folding Systems",
+      description: "Versatile folding door systems for large openings",
+      image:
+        "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=1200&auto=format&fit=crop",
+      products: ["MSFD50", "MSFD58 Premium Folding Door"],
+    },
+  ],
+  "thermal-brake-system": [
+    {
+      id: "thermal-sliding",
+      name: "Thermal Sliding Systems",
       description:
-        "LA VISTA ultra-slim sliding system with large transparent surfaces and minimal sightlines",
+        "Energy-efficient sliding systems with thermal break technology",
       image:
         "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      specs: "Max weight: 300kg • Glass: 5-30mm • Ultra-slim 31mm frame",
+      products: [
+        "MSTH75 Sliding",
+        "150 Panoramic Sliding Doors",
+        "MSTH35 Slim Sliding",
+      ],
     },
     {
-      id: "ms18",
-      name: "MS18",
-      description:
-        "PREMIUM SLIM sliding system with ultimate performance and large transparent surfaces",
-      image:
-        "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-      specs: "Max weight: 500kg • Glass: 5-30mm • Height up to 4500mm",
-    },
-    {
-      id: "ms22-minimal",
-      name: "MS22 Minimal",
-      description:
-        "PREMIUM MINIMAL sliding system with minimalist panoramic design and narrowest visible profile",
+      id: "thermal-casement",
+      name: "Thermal Casement Systems",
+      description: "Insulated casement windows and doors with thermal break",
       image:
         "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      specs: "Max weight: 300kg • Glass: 5-34mm • 29mm visible width",
-    },
-    {
-      id: "ms25",
-      name: "MS25",
-      description:
-        "PREMIUM SLIM sliding system with sleek design for large transparent surfaces and enhanced interlocking",
-      image:
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
-      specs: "Max weight: 300kg • Glass: 5-30mm • Height up to 4000mm",
+      products: ["MCTH50 Casement Windows", "MDTH50 Casement Doors"],
     },
   ],
-  "hybrid-premiums-sliding-system": [
-    {
-      id: "ms16-minimal",
-      name: "MS16 Minimal",
-      description:
-        "ULTRA SLIM insulated sliding system with concealed frame and optimal panoramic views",
-      image:
-        "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      specs:
-        "Max weight: 300kg • Glass: 5-24mm • Ultra slim 20mm visible width",
-    },
-    {
-      id: "ms18-panoramic-sliding-door",
-      name: "MS18 Panoramic Sliding Door",
-      description:
-        "PREMIUM SLIM panoramic sliding system with ultra-large dimensions and heavy-duty performance",
-      image:
-        "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-      specs: "Max weight: 600kg • Glass: 5-30mm • Large span capability",
-    },
-    {
-      id: "ms22-panoramic",
-      name: "MS22 Panoramic",
-      description:
-        "PREMIUM MINIMAL PANORAMIC sliding system with narrowest visible profile for large transparent surfaces",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      specs: "Max weight: 300kg • Glass: 5-34mm • 29mm visible width",
-    },
-    {
-      id: "ms30-slim-heavy-duty-lift-and-slide",
-      name: "MS30 Slim Heavy-Duty Lift and Slide",
-      description:
-        "Heavy-duty lift and slide system with adjustable ventilation and superior sealing performance",
-      image:
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
-      specs:
-        "Max weight: 300/400/600kg • Glass: 5-45mm • Lift and slide technology",
-    },
-  ],
- 
 };
 
 export default function SubCategoryPage() {
@@ -227,10 +176,7 @@ export default function SubCategoryPage() {
                   </p>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-neutral-500">
-                      {"products" in subcategory
-                        ? subcategory.products.length
-                        : 0}{" "}
-                      Products
+                      {subcategory.products.length} Products
                     </span>
                     <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">
                       <svg
