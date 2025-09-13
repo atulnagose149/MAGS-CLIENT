@@ -23,21 +23,21 @@ export default function HomePage() {
       <div id="our-solution">
         <OurSolution />
       </div>
-      <div id="products">
+      {/* <div id="products">
         <ProductsSection />
-      </div>
-      <div id="projects">
+      </div> */}
+      {/* <div id="projects">
         <ProjectsSection />
-      </div>
-      <div id="testimonials">
+      </div> */}
+      {/* <div id="testimonials">
         <TestimonialsSection />
-      </div>
+      </div> */}
       {/* <div id="gallery">
         <GallerySection />
       </div> */}
-      <div id="about">
+      {/* <div id="about">
         <AboutSection />
-      </div>
+      </div> */}
       <div id="contact">
         <ContactSection />
       </div>

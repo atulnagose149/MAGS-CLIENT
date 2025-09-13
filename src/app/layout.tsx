@@ -7,18 +7,18 @@ import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "MAGS - Premium Window Systems",
-  description: "Energy-efficient, sustainably produced windows and doors that positively impact homes, buildings, and the people who use them.",
+  description:
+    "Energy-efficient, sustainably produced windows and doors that positively impact homes, buildings, and the people who use them.",
 };
 
+// src/app/layout.tsx
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning={true}>
         <ClientWrapper>
           <Navbar />
-          <main className="min-h-screen">
-            {children}
-          </main>
+          <main className="min-h-screen">{children}</main>
           <Footer />
         </ClientWrapper>
       </body>

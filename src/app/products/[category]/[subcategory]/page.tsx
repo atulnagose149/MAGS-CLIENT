@@ -313,7 +313,9 @@ export default function ProductsListPage() {
     <div className="min-h-screen bg-neutral-50">
       {/* Breadcrumb */}
       <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4" style={{
+    marginTop: "5.25rem"  // 100px ÷ 16px = 6.25rem
+}}>
           <nav className="flex space-x-2 text-sm">
             <Link
               href="/products"

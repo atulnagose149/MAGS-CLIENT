@@ -2,6 +2,7 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const subcategoriesData = {
   "sliding-windows-and-doors": [
@@ -111,16 +112,29 @@ const subcategoriesData = {
 export default function SubCategoryPage() {
   const params = useParams();
   const category = params.category as string;
+  const [currentCategory, setCurrentCategory] = useState(category);
+
+  // Update category when params change
+  useEffect(() => {
+    if (category !== currentCategory) {
+      setCurrentCategory(category);
+    }
+  }, [category, currentCategory]);
+
   const subcategories =
-    category in subcategoriesData
-      ? subcategoriesData[category as keyof typeof subcategoriesData]
+    currentCategory in subcategoriesData
+      ? subcategoriesData[currentCategory as keyof typeof subcategoriesData]
       : [];
 
+  // Add key to force re-render when category changes
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div key={currentCategory} className="min-h-screen bg-neutral-50 mt-2">
       {/* Breadcrumb */}
       <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4" style={{
+    marginTop: "5.25rem"  // 100px ÷ 16px = 6.25rem
+}}>
+
           <nav className="flex space-x-2 text-sm">
             <Link
               href="/products"
@@ -130,7 +144,7 @@ export default function SubCategoryPage() {
             </Link>
             <span className="text-neutral-400">/</span>
             <span className="text-neutral-600 capitalize">
-              {category?.replace(/-/g, " ")}
+              {currentCategory?.replace(/-/g, " ")}
             </span>
           </nav>
         </div>
@@ -140,7 +154,7 @@ export default function SubCategoryPage() {
       <div className="bg-gradient-to-r from-amber-50 to-amber-100 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-amber-900 mb-2 capitalize">
-            {category?.replace(/-/g, " ")}
+            {currentCategory?.replace(/-/g, " ")}
           </h1>
           <p className="text-amber-700">
             Choose from our range of specialized systems
@@ -154,8 +168,8 @@ export default function SubCategoryPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {subcategories.map((subcategory, idx) => (
               <Link
-                key={idx}
-                href={`/products/${category}/${subcategory.id}`}
+                key={`${currentCategory}-${idx}`}
+                href={`/products/${currentCategory}/${subcategory.id}`}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden border border-neutral-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
               >
                 <div className="h-48 bg-neutral-200 overflow-hidden">
