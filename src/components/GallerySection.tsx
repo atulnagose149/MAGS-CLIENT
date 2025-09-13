@@ -31,10 +31,10 @@ const images = [
 
   // People & Details
   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80",
-  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1200&q=80",
-  "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=1200&q=80",
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80",
-  "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=1200&q=80",
+  // "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1200&q=80",
+  // "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=1200&q=80",
+  // "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80",
+  // "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=1200&q=80",
 ];
 
 export default function GallerySection() {
