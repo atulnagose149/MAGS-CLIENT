@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -135,16 +136,33 @@ export default function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a
-            href="#products"
-            className="px-8 py-4 bg-amber-500 text-neutral-900 font-semibold rounded-lg hover:bg-amber-400 transition-all duration-300 transform hover:-translate-y-1 shadow-xl hover:shadow-2xl"
+          <Link
+            href="/products"
+            className="group relative px-8 py-4 bg-amber-500 text-neutral-900 font-semibold rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 shadow-xl hover:shadow-2xl hover:bg-amber-400 overflow-hidden inline-block"
             style={{
               boxShadow:
                 "0 10px 25px rgba(0,0,0,0.3), 0 0 0 1px rgba(245,158,11,0.5)",
             }}
+            onMouseEnter={(e) => {
+              gsap.to(e.currentTarget, {
+                scale: 1.05,
+                y: -8,
+                duration: 0.3,
+                ease: "power2.out",
+              });
+            }}
+            onMouseLeave={(e) => {
+              gsap.to(e.currentTarget, {
+                scale: 1,
+                y: 0,
+                duration: 0.3,
+                ease: "power2.out",
+              });
+            }}
           >
-            Explore Products
-          </a>
+            <span className="relative z-10">Explore Products</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+          </Link>
           <a
             href="#contact"
             className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/80 text-white font-semibold rounded-lg hover:bg-white/20 hover:border-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg"
