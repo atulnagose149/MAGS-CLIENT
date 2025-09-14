@@ -14,27 +14,18 @@ const images = [
   "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
   "https://images.unsplash.com/photo-1600566753052-dc5dcdc6c351?w=1200&q=80",
   "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
-
-  // Nature & Landscapes
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
-  "https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?w=1200&q=80",
-  "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80",
-  "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1200&q=80",
-  "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=1200&q=80",
-
-  // Technology & Abstract
-  "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1200&q=80",
-  "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&q=80",
-  "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&q=80",
-  "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&q=80",
-  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
-
-  // People & Details
-  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80",
-  // "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1200&q=80",
-  // "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=1200&q=80",
-  // "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80",
-  // "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=1200&q=80",
+  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/service-entry-img-1.jpg",
+  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/vision-image.jpg",
+  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/page-header-bg.jpg",
+  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/why-work-with-us-img-1.jpg",
+  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/why-work-with-us-img-2.jpg",
+  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/work-gallery-img-1.jpg",
+  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/work-gallery-img-2.jpg",
+  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/work-gallery-img-3.jpg",
+  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/our-faq-img.jpg",
+  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/post-1.jpg",
+  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/post-3.jpg",
+  // "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/mission-image-2.jpg",
 ];
 
 export default function GallerySection() {
