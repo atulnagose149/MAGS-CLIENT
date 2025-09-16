@@ -84,17 +84,15 @@ export default function Navbar() {
             onClick={() => scrollToSection("hero")}
             className="cursor-pointer hover:opacity-80 transition-all duration-300 transform hover:scale-105"
           >
-            <div
-              className={`rounded-lg transition-all duration-300 ${
-                isTransparent ? "bg-white/10 backdrop-blur-sm px-3 py-1" : ""
-              }`}
-            >
+            <div className="bg-white/20">
+              {" "}
+              {/* Light transparent white */}
               <Image
-                src="/MAGS-LOGO.svg"
+                src="/LOGO2.png"
                 alt="MAGS Logo"
-                width={120}
-                height={40}
-                className="h-8 sm:h-10 w-auto object-contain"
+                width={350}
+                height={175}
+                className="h-12 sm:h-16 w-auto object-contain"
                 priority
               />
             </div>
@@ -105,11 +103,11 @@ export default function Navbar() {
             className="cursor-pointer hover:opacity-80 transition-all duration-300 transform hover:scale-105"
           >
             <Image
-              src="/MAGS-LOGO.svg"
+              src="/LOGO.jpg"
               alt="MAGS Logo"
-              width={120}
-              height={40}
-              className="h-8 sm:h-10 w-auto object-contain"
+              width={200}
+              height={100}
+              className="h-12 sm:h-16 w-auto object-contain"
               priority
             />
           </Link>
@@ -184,13 +182,13 @@ export default function Navbar() {
                   : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
               }`}
             >
-              <Link
+              {/* <Link
                 href="/products"
                 className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-semibold border-b border-gray-100 text-gray-700"
                 onClick={() => setIsDesktopDropdownOpen(false)}
               >
                 All Products
-              </Link>
+              </Link> */}
               <Link
                 href="/products/sliding-windows-and-doors"
                 className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 text-gray-700"

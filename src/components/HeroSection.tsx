@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,13 +85,15 @@ export default function HeroSection() {
       {/* Background Image Collage */}
       <div className="absolute inset-0 z-0">
         {/* Main background image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1604014237800-1c9102c219da?q=80&w=2070&auto=format&fit=crop')",
-          }}
-        ></div>
+        <div className="absolute inset-0">
+          <Image
+            src="/hero.jpg"
+            alt="Hero background"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
 
         {/* Enhanced overlay gradient for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/50 to-black/65"></div>

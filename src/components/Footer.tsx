@@ -41,8 +41,8 @@ export default function Footer() {
                 <Image
                   src="/MAGS-LOGO.svg"
                   alt="MAGS Logo"
-                  width={120}
-                  height={40}
+                  width={200}
+                  height={100}
                   className="h-10 w-auto object-contain hover:opacity-80 transition-opacity duration-300"
                   priority
                 />

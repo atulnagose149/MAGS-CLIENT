@@ -69,7 +69,7 @@ export default function ProductsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-neutral-50 " >
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-amber-50 to-amber-100 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -210,7 +210,7 @@ export default function ProjectDetail({ slug }: ProjectDetailProps) {
                 </div>
 
                 {/* Share Section */}
-                <div className="mt-8 pt-6 border-t border-gray-700">
+                {/* <div className="mt-8 pt-6 border-t border-gray-700">
                   <h4 className="font-semibold mb-4">Share:</h4>
                   <div className="flex space-x-3">
                     {[
@@ -228,12 +228,12 @@ export default function ProjectDetail({ slug }: ProjectDetailProps) {
                       </button>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 {/* CTA Button */}
-                <button className="w-full mt-6 px-6 py-3 bg-amber-500 text-black font-semibold rounded-lg hover:bg-amber-400 transition-colors">
+                {/* <button className="w-full mt-6 px-6 py-3 bg-amber-500 text-black font-semibold rounded-lg hover:bg-amber-400 transition-colors">
                   Get Similar Quote
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

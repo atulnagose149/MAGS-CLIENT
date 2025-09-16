@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation"; // Add this import
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -10,23 +11,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectsList() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const router = useRouter(); // Add this hook
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Hero animation
+      // Hero animation - FASTER
       gsap.fromTo(
         ".hero-title",
         { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.2, ease: "power3.out" }
+        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
       );
 
       gsap.fromTo(
         ".hero-subtitle",
         { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, delay: 0.3, ease: "power2.out" }
+        { y: 0, opacity: 1, duration: 0.6, delay: 0.2, ease: "power2.out" }
       );
 
-      // Projects grid animation
+      // Projects grid animation - FASTER
       const cards = gsap.utils.toArray(".project-card");
       cards.forEach((card: any, i) => {
         gsap.fromTo(
@@ -36,8 +38,8 @@ export default function ProjectsList() {
             opacity: 1,
             y: 0,
             scale: 1,
-            duration: 1.2,
-            delay: 0.5 + i * 0.1,
+            duration: 0.8,
+            delay: 0.25 + i * 0.05,
             ease: "power3.out",
             scrollTrigger: {
               trigger: card,
@@ -52,17 +54,24 @@ export default function ProjectsList() {
     return () => ctx.revert();
   }, []);
 
+  // Handle card click
+  const handleCardClick = (slug: string) => {
+    router.push(`/projects/${slug}`);
+  };
+
   return (
     <div ref={sectionRef} className="min-h-screen bg-gray-900 text-white">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')",
-          }}
-        />
+        <div className="absolute inset-0">
+          <Image
+            src="/projectbanner.jpg"
+            alt="Project banner"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
@@ -84,7 +93,8 @@ export default function ProjectsList() {
             {projects.map((project, index) => (
               <div
                 key={project.slug}
-                className="project-card group bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                className="project-card group bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                onClick={() => handleCardClick(project.slug)}
               >
                 <div className="relative h-64 overflow-hidden">
                   <Image
@@ -123,10 +133,7 @@ export default function ProjectsList() {
                     {project.overview}
                   </p>
 
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="inline-flex items-center px-4 py-2 bg-amber-500 text-black font-semibold rounded-lg hover:bg-amber-400 transition-colors group"
-                  >
+                  <div className="inline-flex items-center px-4 py-2 bg-amber-500 text-black font-semibold rounded-lg hover:bg-amber-400 transition-colors group">
                     Read More
                     <svg
                       className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform"
@@ -141,7 +148,7 @@ export default function ProjectsList() {
                         d="M9 5l7 7-7 7"
                       />
                     </svg>
-                  </Link>
+                  </div>
                 </div>
               </div>
             ))}

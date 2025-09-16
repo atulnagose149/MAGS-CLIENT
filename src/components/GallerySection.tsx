@@ -8,24 +8,26 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const images = [
-  // Architecture & Interiors
-  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-  "https://images.unsplash.com/photo-1600566753052-dc5dcdc6c351?w=1200&q=80",
-  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
-  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/service-entry-img-1.jpg",
-  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/vision-image.jpg",
-  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/page-header-bg.jpg",
-  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/why-work-with-us-img-1.jpg",
-  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/why-work-with-us-img-2.jpg",
-  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/work-gallery-img-1.jpg",
-  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/work-gallery-img-2.jpg",
-  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/work-gallery-img-3.jpg",
-  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/our-faq-img.jpg",
-  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/post-1.jpg",
-  "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/post-3.jpg",
-  // "https://demo.awaikenthemes.com/hetch/wp-content/uploads/2024/11/mission-image-2.jpg",
+  "/p1/1.jpg",
+  "/p1/2.jpg",
+  "/p1/3.jpg",
+  "/p1/4.jpg",
+  "/p1/5.jpg",
+  "/p1/6.jpg",
+  "/p1/7.jpg",
+  "/p1/8.jpg",
+  "/p1/9.jpg",
+  "/p1/10.jpg",
+  "/p1/11.jpg",
+  "/p1/12.jpg",
+  "/p1/13.jpg",
+  "/p1/14.jpg",
+  "/p1/15.jpg",
+  "/p1/16.jpg",
+  "/p1/17.jpg",
+  "/p1/18.jpg",
+  "/p1/19.jpg",
+  "/p1/20.jpg",
 ];
 
 export default function GallerySection() {
@@ -61,15 +63,14 @@ export default function GallerySection() {
   };
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-gray-50 py-20 px-6">
+    <section
+      ref={sectionRef}
+      className="relative w-full bg-[#0F172B] py-20 px-6 mt-5"
+    >
       <div className="max-w-7xl mx-auto text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Project Gallery
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          Gallery
         </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Explore some of our most iconic works—designed with precision, crafted
-          with care, and built to inspire.
-        </p>
       </div>
 
       {/* Masonry / Pinterest layout */}
@@ -87,7 +88,7 @@ export default function GallerySection() {
             >
               <Image
                 src={src}
-                alt={`Gallery ${i}`}
+                alt={`Gallery ${i + 1}`}
                 width={400}
                 height={600}
                 className="w-full h-auto transform transition-transform duration-500 group-hover:scale-110"
