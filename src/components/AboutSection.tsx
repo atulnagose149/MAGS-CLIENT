@@ -53,7 +53,9 @@ export default function AboutSection() {
         <div
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: `url('/aboutbanner.jpg')`,
+            //  backgroundImage: `url('/aboutbanner.jpg')`,
+            backgroundImage: `url('/WhyChooseMAGS.jpg')`,
+
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundAttachment: "fixed",
@@ -67,7 +69,7 @@ export default function AboutSection() {
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-6 sm:space-y-8">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white mt-30">
               Engineering-led
               <span className="block text-amber-400">excellence</span>
               in every detail
@@ -223,7 +225,7 @@ export default function AboutSection() {
               }`}
             >
               <Image
-                src="/WhyChooseMAGS.jpg"
+                src="/products/Why Choose MAGS.jpg"
                 alt="Modern building with MAGS aluminum glazing systems"
                 width={600}
                 height={500}
