@@ -11,9 +11,9 @@ const productData = {
     description:
       "MAGS Economy Sliding MSE63 is a non-insulated sliding system offering a wide range of solutions ideal for applications in warm climates, winter gardens or the partitioning of indoor office spaces. MSE63 applies the latest techniques, designed according to the highest European quality standards. This sliding system offers a complete range of opening possibilities, from sliding elements in the wall to 2- and 3-solutions. MSE63 realises an aesthetic solution for your building. In addition, the sliding elements can easily be integrated with different types of windows, conservatory systems, sunscreens, and screen doors.",
     images: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=1200&auto=format&fit=crop",
+      "/products/MSE63!.jpg",
+      "/products/MSE63.jpg",
+      "/products/MSE63@.jpg",
     ],
     performance: {
       comfort: {
@@ -58,9 +58,9 @@ const productData = {
     description:
       "MAGS Sliding MSE22 is a non-insulated sliding system offering a wide range of solutions ideal for applications in warm climates, winter gardens or the partitioning of indoor office spaces. MSE22 applies the latest techniques, designed according to the highest European quality standards. This sliding system offers a complete range of opening possibilities, from sliding elements in the wall, over 2-, 3- to even 4-rail solutions. With its minimalistic design, MSE22 realises an aesthetic solution for your building. In addition, the sliding elements can easily be integrated with different types of windows, conservatory systems, sunscreens, and screen doors.",
     images: [
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
+      "/products/MSE22-1.jpg",
+      "/products/MSE22-2.jpg",
+      "/products/MSE22-3.jpg",
     ],
     performance: {
       comfort: {
@@ -105,9 +105,9 @@ const productData = {
     description:
       "MAGS Sliding SLIM MS20 is a non-insulated sliding system offering a wide range of solutions ideal for applications in warm climates, winter gardens or the partitioning of indoor office spaces. MS20 applies the latest techniques, designed according to the highest European quality standards. This sliding system offers the complete range of opening possibilities, from sliding elements in the wall, over 2-, 3- to even 4- rail solutions. With the minimalistic design, MS20 realises an aesthetic solution for your building. In addition, the sliding elements can easily be integrated with different types of windows, conservatory systems, sun screenings and screen doors.",
     images: [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+      "/products/MS20-1.jpg",
+      "/products/MS20-2.jpg",
+      "/products/MS20-3.jpg",
     ],
     performance: {
       comfort: {
@@ -152,9 +152,9 @@ const productData = {
     description:
       "MAGS Sliding GULF SLIM MS27 is a non-insulated sliding system offering a wide range of solutions ideal for applications in warm climates, winter gardens or the partitioning of indoor office spaces. MS27 applies the latest techniques, designed according to the highest European quality standards. This sliding system offers a complete range of opening possibilities, from sliding elements in the wall to 2, 3, and 4-rail solutions. With its minimalistic design, MS27 realises an aesthetic solution for your building. In addition, the sliding elements can easily be integrated with different types of windows, conservatory systems, sunscreens, and screen doors.",
     images: [
-      "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+      "/products/MS27-1.jpg",
+      "/products/MS27-2.jpg",
+      // "/products/MS27-3.jpg",
     ],
     performance: {
       comfort: {
@@ -199,9 +199,9 @@ const productData = {
     description:
       "MAGS Sliding GULF SLIM MS27 is a non-insulated sliding system offering a wide range of solutions ideal for applications in warm climates, winter gardens or the partitioning of indoor office spaces. MS27 applies the latest techniques, designed according to the highest European quality standards. This sliding system offers a complete range of opening possibilities, from sliding elements in the wall to 2 and 3-rail solutions. With its minimalistic design, MS27 realises an aesthetic solution for your building. In addition, the sliding elements can easily be integrated with different types of windows, conservatory systems, sunscreens, and screen doors.",
     images: [
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
+      "/products/MS27 GULF-1.jpg",
+      "/products/MS27 GULF-23.jpg",
+      "/products/MS27 GULF-3.jpg",
     ],
     performance: {
       comfort: {
@@ -245,9 +245,9 @@ const productData = {
     description:
       "MAGS Sliding MS40 is a non-insulated sliding system offering a wide range of solutions ideal for applications in warm climates, winter gardens, or the partitioning of indoor office spaces. MS40 applies the latest techniques, designed according to the highest European quality standards. This sliding system offers a complete range of opening possibilities, from sliding elements in the wall solutions. With its minimalistic design, MS40 realises an aesthetic solution for your building. In addition, the sliding elements can easily be integrated with different types of windows, conservatory systems, sun screenings and screen doors.",
     images: [
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=1200&auto=format&fit=crop",
+      "/products/MS40-1.jpg",
+      "/products/MS40-2.jpg",
+      "/products/MS40-3.jpg",
     ],
     performance: {
       comfort: {
@@ -292,11 +292,7 @@ const productData = {
     fullName: "MAGS Sliding MS40 Monorail",
     description:
       "MAGS Sliding MS40 is a non-insulated sliding system offering a wide range of solutions ideal for applications in warm climates, winter gardens, or the partitioning of indoor office spaces. MS40 applies the latest techniques, designed according to the highest European quality standards. This sliding system offers a complete range of opening possibilities, from sliding elements in the wall solutions. With its minimalistic design, MS40 realises an aesthetic solution for your building. In addition, the sliding elements can easily be integrated with different types of windows, conservatory systems, sun screenings and screen doors.",
-    images: [
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: ["/products/MS40 MONORAIL-1.jpg", "/products/MS40 MONORAIL-2.jpg"],
     performance: {
       comfort: {
         airTightness: "-",
@@ -383,11 +379,7 @@ const productData = {
     fullName: "MAGS LA VISTA SLIDING SYSTEM MS11",
     description:
       "MAGS LA VISTA SLIDING SYSTEM MS11 Enjoy view with ultimate performances! The ultra-slim design of the MS11 sliding door creates large transparent surfaces, with a light, sleek and elegant appearance. This fully transparent and accessible sliding door seamlessly extends the house's interior to the outside. Despite the minimal visual sidelines, the systems high strength allows MS11 to carry the weight of a large sliding glass pane up to 300 kilograms. Fixed panels up to 600 kg. This in combination with the high energy performance and the minimalistic look makes this product the best solution architecture. Available in bottom SS track and aluminum track system.",
-    images: [
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: ["/products/MS11-1.jpg"],
     performance: {
       comfort: {
         airTightness: "-",
@@ -429,11 +421,7 @@ const productData = {
     fullName: "MAGS PREMIUM SLIM SLIDING SYSTEM MS18",
     description:
       "MAGS PREMIUM SLIM SLIDING SYSTEM MS18 Enjoy view with ultimate performances! The ultra-slim design of the MS18 sliding door creates large transparent surfaces, with a light, sleek and elegant appearance. This fully transparent and accessible sliding door seamlessly extends the house's interior to the outside. Despite the minimal visual sidelines, the systems high strength allows MS18 to carry the weight of a large sliding glass pane up to 300 kilograms. Fixed panels up to 600 kg. This in combination with the high energy performance and the minimalistic look makes this product the best solution architecture.",
-    images: [
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: ["/products/MS18-1.jpg", "/products/MS18-2.jpg"],
     performance: {
       comfort: {
         airTightness: "-",
@@ -475,11 +463,7 @@ const productData = {
     fullName: "MAGS PREMIUM MINIMAL SLIDING SYSTEM MS22",
     description:
       "MAGS PREMIUM MINIMAL SLIDING SYSTEM MS22 Enjoy ultimate performance! The minimalist panoramic design of the MS22 sliding door creates large transparent surfaces with a light, sleek, and elegant appearance. This fully transparent and accessible sliding door seamlessly extends the house's interior to the outside. Despite the minimal visual sidelines, the system's high strength allows MS22 to carry the weight of a large sliding glass pane of up to 300 kilograms. Fixed panels up to 600 kg. This in combination with the high energy performance and the minimalistic look makes this product the best solution architecture.",
-    images: [
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: ["/products/MS22MINIMAl-1.jpg", "/products/MS40 MONORAIL-2.jpg"],
     performance: {
       comfort: {
         airTightness: "-",
@@ -521,11 +505,7 @@ const productData = {
     fullName: "MAGS PREMIUM SLIM SLIDING SYSTEM MS25",
     description:
       "MAGS PREMIUM SLIM SLIDING SYSTEM MS25 Enjoy view with ultimate performances! The slim design of the sliding door creates large transparent surfaces, with a light, sleek and elegant appearance. This fully transparent and accessible sliding door seamlessly extends the house's interior to the outside. Despite the minimal visual sidelines, the systems high strength allows MS25 to carry the weight of a large sliding glass pane up to 300 kilograms. Fixed panels up to 600 kg. This in combination with the high energy performance and the minimalistic look makes this product the best solution architecture.",
-    images: [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: ["/products/MS25-1.jpg", "/products/MS25-2.jpg"],
     performance: {
       comfort: {
         airTightness: "-",
@@ -567,11 +547,7 @@ const productData = {
     fullName: "MAGS ULTRA SLIM MS16",
     description:
       "MAGS ULTRA SLIM MS16 is a high insulated sliding system with slim profiles and a concealed frame that combines comfort with elegance. Thanks to the ultra slim design, this sliding window allows for maximum natural light and provides an optimal panoramic view. The integrated innovative technologies guarantee ultimate performances with regard to wind and water tightness and thermal insulation, meeting with the highest standards. The sliding system MS16 offers you all the design freedom to create contemporary living spaces, combining ultimate brightness with maximum comfort. This sliding system provides a wide range of opening possibilities, from elements that slide over 2- and 3-rail solutions, allowing you to open up to 6 leaves, over a very slim central closing option of only 42 mm wide.",
-    images: [
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: ["/products/MS16 MINIMAL-1.jpg", "/products/MS16 MINIMAL-2.jpg"],
     performance: {
       comfort: {
         airTightness: "-",
@@ -659,11 +635,7 @@ const productData = {
     fullName: "MAGS PREMIUM MINIMAL PANORAMIC SLIDING SYSTEM MS22",
     description:
       "MAGS PREMIUM MINIMAL PANORAMIC SLIDING SYSTEM MS22 Enjoy ultimate performance! The minimalist panoramic design of the MS22 sliding door creates large transparent surfaces with a light, sleek, and elegant appearance. This fully transparent and accessible sliding door seamlessly extends the house's interior to the outside. Despite the minimal visual sidelines, the system's high strength allows MS22 to carry the weight of a large sliding glass pane of up to 300 kilograms. Fixed panels up to 600 kg. This in combination with the high energy performance and the minimalistic look makes this product the best solution architecture.",
-    images: [
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: ["/products/MS22 PANORAMIC-1.jpg"],
     performance: {
       comfort: {
         airTightness: "-",
@@ -706,9 +678,9 @@ const productData = {
     description:
       "MS30 Slim Heavy-Duty lift and Slide system provides lifting sliding for better seating performance. Positioned at will, easy to adjust the ventilation area. Offers sound and heat insulation, making it energy efficient. This advanced system combines the convenience of sliding doors with the sealing performance of lift-and-slide technology, providing superior thermal and acoustic insulation.",
     images: [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      "/products/MS30 Slim Heavy-Duty lift and Slide-1.jpg",
+      "/products/MS30 Slim Heavy-Duty lift and Slide-2.jpg",
+      "/products/MS30 Slim Heavy-Duty lift and Slide-3.jpg",
     ],
     performance: {
       comfort: {
@@ -751,9 +723,8 @@ const productData = {
     description:
       "MCE28 Economy casement system - Coming Soon. This economy casement system provides reliable outward opening functionality for residential applications. Designed for cost-effective solutions while maintaining quality performance standards. Features outward opening mechanism with standard glazing options suitable for basic window applications.",
     images: [
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      "/products/MCE28 Economy casement-1.jpg",
+      "/products/MCE28 Economy casement-2.jpg",
     ],
     performance: {
       comfort: {
@@ -796,9 +767,8 @@ const productData = {
     description:
       "MAGS CASEMENT SYSTEM 3in1 MCE92 is a non-insulated system for inward and outward opening windows and doors, designed according to the highest European quality standards. To guarantee superior quality and performance in every situation, the system has three gasket levels for inward and outward opening windows and doors. Through intelligent application, these multiple gaskets meet even the high air- and water tightness requirements of tropical regions. This simple, yet highly innovative design offers a very cost-efficient solution thanks to its optimised fabrication process. MCE92 can be realised with all types of inward and outward opening windows and doors, with security grill and mosquito net an extensive choice of accessories the perfect match of building concepts.",
     images: [
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      "/products/MAGS CASEMENT SYSTEM 3in1 MCE92-1.jpg",
+      "/products/MAGS CASEMENT SYSTEM 3in1 MCE92-2.jpg",
     ],
     performance: {
       comfort: {
@@ -840,11 +810,7 @@ const productData = {
     fullName: "MAGS CASEMENT SYSTEM MC45",
     description:
       "MAGS CASEMENT SYSTEM MC45 is a non-insulated system for inward and outward opening windows and doors, designed according to the highest European quality standards. To guarantee superior quality and performance in every situation, the system has three gasket levels for inward and outward opening windows and doors. Through intelligent application, these multiple gaskets meet even the high air- and water tightness requirements of tropical regions. This simple, yet highly innovative design offers a very cost-efficient solution thanks to its optimised fabrication process. MC45 can be realised with all types of inward and outward opening windows and doors, with an extensive choice of accessories the perfect match of building concepts.",
-    images: [
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: ["/products/MС45-1.jpg", "/products/MС45-2.jpg"],
     performance: {
       comfort: {
         airTightness: "-",
@@ -880,16 +846,54 @@ const productData = {
       },
     },
   },
+  md45: {
+    name: "MD45 (Sliding Door)",
+    fullName: "MAGS CASEMENT DOOR MD45",
+    description:
+      "MAGS CASEMENT DOOR MD45 profiles and accessories for windows and doors are extensively tested in an optimized European test and approval program. The fireproofing time span is achieved by inducing a special cooling material into the profile chambers and by using self-adhesive and water-resistant swelling gaskets. These gaskets do not need to be sealed, reducing fabrication time of the profiles and saving costs. The MD45 fire proof range is available as outward opening single and double doors, panic doors, combined fixed window elements as well as glazed partition walls. This extensive range of configurations offers a huge range of options and combinations for architects to work with. Furthermore a large choice of accessories and locking devices is available.",
+    images: ["/products/MD45-1.jpg", "/products/MD45-2.jpg"],
+    performance: {
+      comfort: {
+        airTightness: "-",
+        acoustics: "-",
+        waterTightness: "-",
+        windLoadResistance: "-",
+      },
+      safety: {
+        burglarResistance: "-",
+      },
+    },
+    properties: {
+      maxDimensions: {
+        minHeightOfVent: "2100 mm", // DIFFERENT: Much taller minimum than MC105 (500mm)
+        minWidthOfVent: "650 mm", // DIFFERENT: Much wider minimum than MC105 (300mm)
+        maxHeightOfVent: "3200 mm", // DIFFERENT: Taller maximum than MC105 (3000mm)
+        maxWidthOfVent: "1200 mm", // DIFFERENT: Wider maximum than MC105 (900mm)
+        maxWeightOfVent: "200 kg", // DIFFERENT: Heavier capacity than MC105 (150kg)
+      },
+      sightlines: {
+        minFrameWidthOutward: "45 mm", // DIFFERENT: Shallower than MC105 (105mm)
+        minVentWidthOutward: "60 mm", // DIFFERENT: Wider than MC105 (45mm)
+        minFrameVentWidthOutward: "105 mm", // Same as MC105
+        depthFrame: "45 mm, 105 mm", // DIFFERENT: Dual options vs MC105's single 105mm
+        depthVent: "45 mm, 51 mm", // Same dual options as MC105
+        minWidthTProfile: "66 mm, 72 mm", // Same dual options as MC105
+      },
+      glazing: {
+        rebateHeight: "21 mm", // Same as MC105
+        minGlassThickness: "5 mm", // Same as MC105
+        glazingMethod: "Dry Glazing with EPDM or Natural Silicon",
+        maxGlassThickness: "35 mm", // Same as MC105
+      },
+    },
+  },
+
   mc105: {
     name: "MC105 (3in1 Glass, Grill & Mesh)",
     fullName: "MAGS CASEMENT SYSTEM 3in1 MC105",
     description:
       "MAGS CASEMENT SYSTEM 3in1 MC105 is a non-insulated system for inward and outward opening windows and doors, designed according to the highest European quality standards. To guarantee superior quality and performance in every situation, the system has three gasket levels for inward and outward opening windows and doors. Through intelligent application, these multiple gaskets meet even the high air- and water tightness requirements of tropical regions. This simple, yet highly innovative design offers a very cost-efficient solution thanks to its optimised fabrication process. MC105 can be realised with all types of inward and outward opening windows and doors, with security grill and mosquito net an extensive choice of accessories the perfect match of building concepts.",
-    images: [
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: ["/products/MC105-1.jpg", "/products/MC105-2.jpg"],
     performance: {
       comfort: {
         airTightness: "-",
@@ -931,9 +935,9 @@ const productData = {
     description:
       "MAGS Sliding folding MSFD50 is high insulation and comfort with maximal transparency and aesthetics, allowing for large and heavy glass spans to really open up the space while ensuring optimal insulation. This high performance system offers different opening types, both inward and outward to meet all possible requirements. Apart from the standard folding element, this can feature a main door principle, in which the first leaf is used as an entrance door without affecting the other elements. MAGS Sliding Folding MSFD50 is available with zero threshold solutions, from high performance to low and even flush thresholds, in order to perfectly match all comfort requirements. Additionally, the concept can be perfectly combined with the concept system for windows and doors.",
     images: [
-      "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      "/products/MSFD50-1.jpg",
+      "/products/MSFD50-2.jpg",
+      "/products/MSFD50-3.jpg",
     ],
     performance: {
       comfort: {
@@ -1021,9 +1025,8 @@ const productData = {
     description:
       "MAGS MSTH75 is a highly-insulated sliding system that combines elegance with performance and security. This unique sliding system is characterised by thermal break profiles, allowing the integration of large windows and doors for maximum views, in combination with burglary resistance. The integrated innovative technologies guarantee ultimate performances with regard to wind and water tightness and thermal insulation, meeting with the highest standards. The sliding system MSTH75 offers you all design freedom to create contemporary living spaces, combining ultimate brightness with maximum comfort and security.",
     images: [
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      "/products/MSTH75 Sliding-1.jpg",
+      "/products/MSTH75 Sliding-2.jpg",
     ],
     performance: {
       comfort: {
@@ -1113,9 +1116,9 @@ const productData = {
     description:
       "MAGS MSTH35 is a highly-insulated sliding system that combines elegance with performance and security. This unique sliding system is characterised by thermal break profiles, allowing the integration of large windows and doors for maximum views, in combination with burglary resistance. The integrated innovative technologies guarantee ultimate performances with regard to wind and water tightness and thermal insulation, meeting with the highest standards. The sliding system MSTH35 offers you all design freedom to create contemporary living spaces, combining ultimate brightness with maximum comfort and security.",
     images: [
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      "/products/MSTH35 Slim Sliding-1.jpg",
+      "/products/MSTH35 Slim Sliding-2.jpg",
+      "/products/MSTH35 Slim Sliding-3.jpg",
     ],
     performance: {
       comfort: {
@@ -1159,9 +1162,8 @@ const productData = {
     description:
       "MAGS CASEMENT SYSTEM MCTH50 is a insulated system for inward and outward opening windows and doors, designed according to the highest European quality standards. To guarantee superior quality and performance in every situation, the system has three gasket levels for inward and outward opening windows and doors. Through intelligent application, these multiple gaskets meet even the high air- and water tightness requirements of tropical regions. This simple, yet highly innovative design offers a very cost-efficient solution thanks to its optimised fabrication process. MCTH50 can be realised with all types of inward and outward opening windows and doors, with an extensive choice of accessories the perfect match of building concepts.",
     images: [
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      "/products/MCTH50 Casement Windows-1.jpg",
+      "/products/MCTH50 Casement Windows-2.jpg",
     ],
     performance: {
       comfort: {
@@ -1204,9 +1206,8 @@ const productData = {
     description:
       "MAGS CASEMENT DOORS SYSTEM MDTH50 is a insulated system for inward and outward opening doors, designed according to the highest European quality standards. To guarantee superior quality and performance in every situation, the system has three gasket levels for inward and outward opening doors. Through intelligent application, these multiple gaskets meet even the high air- and water tightness requirements of tropical regions. This simple, yet highly innovative design offers a very cost-efficient solution thanks to its optimised fabrication process. MDTH50 can be realised with all types of inward and outward opening doors, with an extensive choice of accessories the perfect match of building concepts.",
     images: [
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      "/products/MDTH50 Casement Doors-1.jpg",
+      "/products/MDTH50 Casement Doors-2.jpg",
     ],
     performance: {
       comfort: {
@@ -1257,39 +1258,46 @@ export default function ProductDetailPage() {
       : undefined;
 
   if (!product) {
-    return <div>Product not found</div>;
+    return (
+      <div className="min-h-screen bg-[#0F172B] flex items-center justify-center">
+        <div className="text-white text-xl">Product not found</div>
+      </div>
+    );
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-[#0F172B]">
       {/* Breadcrumb */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4" style={{
-    marginTop: "5.25rem"  // 100px ÷ 16px = 6.25rem
-}}>
+      <div className="bg-[#0F172B] border-b border-gray-700">
+        <div
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4"
+          style={{
+            marginTop: "5.25rem", // 100px ÷ 16px = 6.25rem
+          }}
+        >
           <nav className="flex space-x-2 text-sm">
             <Link
               href="/products"
-              className="text-amber-600 hover:text-amber-700"
+              className="text-amber-400 hover:text-amber-300"
             >
               Products
             </Link>
-            <span className="text-neutral-400">/</span>
+            <span className="text-gray-500">/</span>
             <Link
               href={`/products/${category}`}
-              className="text-amber-600 hover:text-amber-700 capitalize"
+              className="text-amber-400 hover:text-amber-300 capitalize"
             >
               {category?.replace(/-/g, " ")}
             </Link>
-            <span className="text-neutral-400">/</span>
+            <span className="text-gray-500">/</span>
             <Link
               href={`/products/${category}/${subcategory}`}
-              className="text-amber-600 hover:text-amber-700 capitalize"
+              className="text-amber-400 hover:text-amber-300 capitalize"
             >
               {subcategory?.replace(/-/g, " ")}
             </Link>
-            <span className="text-neutral-400">/</span>
-            <span className="text-neutral-600">{product.name}</span>
+            <span className="text-gray-500">/</span>
+            <span className="text-gray-300">{product.name}</span>
           </nav>
         </div>
       </div>
@@ -1297,30 +1305,28 @@ export default function ProductDetailPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Column - Images */}
-          <div>
+          <div className="space-y-4">
             <ImageCarousel images={product.images} productName={product.name} />
           </div>
 
           {/* Right Column - Product Info */}
           <div>
-            <h1 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
+            <h1 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               {product.fullName}
             </h1>
 
             <div className="prose prose-neutral max-w-none mb-8">
-              <p className="text-neutral-700 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 {product.description}
               </p>
             </div>
 
             {/* CTA Section */}
-            <div className="bg-amber-50 rounded-lg p-6 mb-8">
-              <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 mb-8">
+              <h3 className="text-lg font-semibold text-white mb-2">
                 Need help?
               </h3>
-              <p className="text-neutral-600 mb-4">
-                Search and compare products
-              </p>
+              <p className="text-gray-300 mb-4">Search and compare products</p>
               <Link
                 href="/contact"
                 className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
@@ -1333,38 +1339,36 @@ export default function ProductDetailPage() {
 
         {/* Performance Section */}
         <div className="mt-16">
-          <h2 className="text-2xl font-bold text-neutral-900 mb-8">
-            Performance
-          </h2>
+          <h2 className="text-2xl font-bold text-white mb-8">Performance</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Comfort */}
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
-              <h3 className="text-lg font-semibold text-amber-600 mb-4">
+            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
+              <h3 className="text-lg font-semibold text-amber-400 mb-4">
                 Comfort
               </h3>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-neutral-600">Air tightness</span>
-                  <span className="text-neutral-900">
+                  <span className="text-gray-300">Air tightness</span>
+                  <span className="text-white">
                     {product.performance.comfort.airTightness}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-neutral-600">Acoustics</span>
-                  <span className="text-neutral-900">
+                  <span className="text-gray-300">Acoustics</span>
+                  <span className="text-white">
                     {product.performance.comfort.acoustics}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-neutral-600">Water tightness</span>
-                  <span className="text-neutral-900">
+                  <span className="text-gray-300">Water tightness</span>
+                  <span className="text-white">
                     {product.performance.comfort.waterTightness}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-neutral-600">Wind load resistance</span>
-                  <span className="text-neutral-900">
+                  <span className="text-gray-300">Wind load resistance</span>
+                  <span className="text-white">
                     {product.performance.comfort.windLoadResistance}
                   </span>
                 </div>
@@ -1372,14 +1376,14 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Safety */}
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
-              <h3 className="text-lg font-semibold text-amber-600 mb-4">
+            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
+              <h3 className="text-lg font-semibold text-amber-400 mb-4">
                 Safety
               </h3>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-neutral-600">Burglar resistance</span>
-                  <span className="text-neutral-900">
+                  <span className="text-gray-300">Burglar resistance</span>
+                  <span className="text-white">
                     {product.performance.safety.burglarResistance}
                   </span>
                 </div>
@@ -1387,7 +1391,7 @@ export default function ProductDetailPage() {
             </div>
           </div>
 
-          <p className="text-sm text-neutral-500 mt-4">
+          <p className="text-sm text-gray-400 mt-4">
             * Note: Performances and properties may be different depending on
             the profile combinations
           </p>
@@ -1395,24 +1399,22 @@ export default function ProductDetailPage() {
 
         {/* Properties Section */}
         <div className="mt-16">
-          <h2 className="text-2xl font-bold text-neutral-900 mb-8">
-            Properties
-          </h2>
+          <h2 className="text-2xl font-bold text-white mb-8">Properties</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Max Dimensions & Weight */}
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
-              <h3 className="text-lg font-semibold text-amber-600 mb-4">
+            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
+              <h3 className="text-lg font-semibold text-amber-400 mb-4">
                 Max. dimensions & weight
               </h3>
               <div className="space-y-3">
                 {Object.entries(product.properties.maxDimensions).map(
                   ([key, value]) => (
                     <div key={key} className="flex justify-between">
-                      <span className="text-neutral-600 capitalize">
+                      <span className="text-gray-300 capitalize">
                         {key.replace(/([A-Z])/g, " $1").toLowerCase()}
                       </span>
-                      <span className="text-neutral-900">{value}</span>
+                      <span className="text-white">{value}</span>
                     </div>
                   )
                 )}
@@ -1420,18 +1422,18 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Sightlines */}
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
-              <h3 className="text-lg font-semibold text-amber-600 mb-4">
+            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
+              <h3 className="text-lg font-semibold text-amber-400 mb-4">
                 Sightlines
               </h3>
               <div className="space-y-3">
                 {Object.entries(product.properties.sightlines).map(
                   ([key, value]) => (
                     <div key={key} className="flex justify-between">
-                      <span className="text-neutral-600 capitalize">
+                      <span className="text-gray-300 capitalize">
                         {key.replace(/([A-Z])/g, " $1").toLowerCase()}
                       </span>
-                      <span className="text-neutral-900">{value}</span>
+                      <span className="text-white">{value}</span>
                     </div>
                   )
                 )}
@@ -1439,18 +1441,18 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Glazing */}
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
-              <h3 className="text-lg font-semibold text-amber-600 mb-4">
+            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
+              <h3 className="text-lg font-semibold text-amber-400 mb-4">
                 Glazing
               </h3>
               <div className="space-y-3">
                 {Object.entries(product.properties.glazing).map(
                   ([key, value]) => (
                     <div key={key} className="flex justify-between">
-                      <span className="text-neutral-600 capitalize">
+                      <span className="text-gray-300 capitalize">
                         {key.replace(/([A-Z])/g, " $1").toLowerCase()}
                       </span>
-                      <span className="text-neutral-900">{value}</span>
+                      <span className="text-white">{value}</span>
                     </div>
                   )
                 )}

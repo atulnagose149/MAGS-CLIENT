@@ -10,8 +10,7 @@ const productsData = {
       name: "MSE63",
       description:
         "Non-insulated sliding system for warm climates and indoor applications",
-      image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/MSE63!.jpg",
       specs: "Max weight: 100kg • Glass: 4-8mm • Economy series",
     },
     {
@@ -20,7 +19,7 @@ const productsData = {
       description:
         "Minimalistic sliding system with 2-, 3- to 4-rail solutions for aesthetic applications",
       image:
-        "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+        "",
       specs: "Max weight: 100kg • Glass: 4-8mm • Minimalistic design",
     },
   ],
@@ -290,12 +289,12 @@ export default function ProductsListPage() {
 
   if (!products || products.length === 0) {
     return (
-      <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[#0F172B] flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-neutral-700 mb-4">
+          <h1 className="text-2xl font-bold text-white mb-4">
             Products Not Found
           </h1>
-          <p className="text-neutral-500 mb-6">
+          <p className="text-gray-300 mb-6">
             The requested product category could not be found.
           </p>
           <Link
@@ -310,28 +309,31 @@ export default function ProductsListPage() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-[#0F172B]">
       {/* Breadcrumb */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4" style={{
-    marginTop: "5.25rem"  // 100px ÷ 16px = 6.25rem
-}}>
+      <div className="bg-[#0F172B] border-b border-gray-700">
+        <div
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4"
+          style={{
+            marginTop: "5.25rem", // 100px ÷ 16px = 6.25rem
+          }}
+        >
           <nav className="flex space-x-2 text-sm">
             <Link
               href="/products"
-              className="text-amber-600 hover:text-amber-700"
+              className="text-amber-400 hover:text-amber-300"
             >
               Products
             </Link>
-            <span className="text-neutral-400">/</span>
+            <span className="text-gray-500">/</span>
             <Link
               href={`/products/${category}`}
-              className="text-amber-600 hover:text-amber-700 capitalize"
+              className="text-amber-400 hover:text-amber-300 capitalize"
             >
               {category?.replace(/-/g, " ")}
             </Link>
-            <span className="text-neutral-400">/</span>
-            <span className="text-neutral-600 capitalize">
+            <span className="text-gray-500">/</span>
+            <span className="text-gray-300 capitalize">
               {subcategory?.replace(/-/g, " ")}
             </span>
           </nav>
@@ -339,12 +341,12 @@ export default function ProductsListPage() {
       </div>
 
       {/* Header */}
-      <div className="bg-gradient-to-r from-amber-50 to-amber-100 py-12">
+      <div className="bg-gradient-to-r from-amber-900 to-amber-700 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-amber-900 mb-2 capitalize">
+          <h1 className="text-3xl md:text-4xl font-bold text-amber-100 mb-2 capitalize">
             {subcategory?.replace(/-/g, " ")}
           </h1>
-          <p className="text-amber-700">
+          <p className="text-amber-200">
             Select a specific product for detailed information
           </p>
         </div>
@@ -358,9 +360,9 @@ export default function ProductsListPage() {
               <Link
                 key={idx}
                 href={`/products/${category}/${subcategory}/${product.id}`}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden border border-neutral-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+                className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
               >
-                <div className="h-48 bg-neutral-200 overflow-hidden">
+                <div className="h-48 bg-gray-700 overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -370,19 +372,19 @@ export default function ProductsListPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-amber-600 mb-3">
+                  <h3 className="text-2xl font-bold text-amber-400 mb-3">
                     {product.name}
                   </h3>
-                  <p className="text-neutral-700 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
                     {product.description}
                   </p>
-                  <p className="text-xs text-neutral-500 italic mb-4">
+                  <p className="text-xs text-gray-400 italic mb-4">
                     {product.specs}
                   </p>
                   <div className="flex justify-end">
-                    <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center">
                       <svg
-                        className="w-4 h-4 text-amber-600"
+                        className="w-4 h-4 text-white"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"

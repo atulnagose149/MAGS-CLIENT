@@ -128,22 +128,24 @@ export default function SubCategoryPage() {
 
   // Add key to force re-render when category changes
   return (
-    <div key={currentCategory} className="min-h-screen bg-neutral-50 mt-2">
+    <div key={currentCategory} className="min-h-screen bg-[#0F172B] mt-2">
       {/* Breadcrumb */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4" style={{
-    marginTop: "5.25rem"  // 100px ÷ 16px = 6.25rem
-}}>
-
+      <div className="bg-[#0F172B] border-b border-gray-700">
+        <div
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4"
+          style={{
+            marginTop: "5.25rem", // 100px ÷ 16px = 6.25rem
+          }}
+        >
           <nav className="flex space-x-2 text-sm">
             <Link
               href="/products"
-              className="text-amber-600 hover:text-amber-700"
+              className="text-amber-400 hover:text-amber-300"
             >
               Products
             </Link>
-            <span className="text-neutral-400">/</span>
-            <span className="text-neutral-600 capitalize">
+            <span className="text-gray-500">/</span>
+            <span className="text-gray-300 capitalize">
               {currentCategory?.replace(/-/g, " ")}
             </span>
           </nav>
@@ -151,12 +153,12 @@ export default function SubCategoryPage() {
       </div>
 
       {/* Header */}
-      <div className="bg-gradient-to-r from-amber-50 to-amber-100 py-12">
+      <div className="bg-gradient-to-r from-amber-900 to-amber-700 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-amber-900 mb-2 capitalize">
+          <h1 className="text-3xl md:text-4xl font-bold text-amber-100 mb-2 capitalize">
             {currentCategory?.replace(/-/g, " ")}
           </h1>
-          <p className="text-amber-700">
+          <p className="text-amber-200">
             Choose from our range of specialized systems
           </p>
         </div>
@@ -170,9 +172,9 @@ export default function SubCategoryPage() {
               <Link
                 key={`${currentCategory}-${idx}`}
                 href={`/products/${currentCategory}/${subcategory.id}`}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden border border-neutral-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+                className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
               >
-                <div className="h-48 bg-neutral-200 overflow-hidden">
+                <div className="h-48 bg-gray-700 overflow-hidden">
                   <Image
                     src={subcategory.image}
                     alt={subcategory.name}
@@ -182,19 +184,19 @@ export default function SubCategoryPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-amber-600 mb-3">
+                  <h3 className="text-xl font-semibold text-amber-400 mb-3">
                     {subcategory.name}
                   </h3>
-                  <p className="text-neutral-700 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
                     {subcategory.description}
                   </p>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-neutral-500">
+                    <span className="text-sm text-gray-400">
                       {subcategory.products.length} Products
                     </span>
-                    <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center">
                       <svg
-                        className="w-4 h-4 text-amber-600"
+                        className="w-4 h-4 text-white"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
