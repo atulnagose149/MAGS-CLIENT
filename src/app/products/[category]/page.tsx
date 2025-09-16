@@ -43,8 +43,7 @@ const subcategoriesData = {
       id: "hybrid-premiums-sliding-system",
       name: "Hybrid Premium Sliding System",
       description: "Advanced hybrid technology for maximum performance",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/hybrid-premiums-sliding-system.jpg",
       products: [
         "MS16 Minimal",
         "MS18 Panoramic sliding door",
@@ -58,8 +57,7 @@ const subcategoriesData = {
       id: "economy-casement",
       name: "Economy Casement",
       description: "Affordable casement solutions with reliable performance",
-      image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/economy-casement outer.jpg",
       products: [
         "MCE28 Economy Casement",
         "MCE92 (Economy 3in1 Glass, Grill & Mesh)",
@@ -69,8 +67,7 @@ const subcategoriesData = {
       id: "premium-casement",
       name: "Premium Casement",
       description: "High-performance casement systems with advanced features",
-      image:
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/premium-casement outer.jpg",
       products: ["MC45", "MC105 (3in1 Glass, Grill & Mesh)", "MD45"],
     },
   ],
@@ -79,8 +76,7 @@ const subcategoriesData = {
       id: "folding-systems",
       name: "Sliding Folding Systems",
       description: "Versatile folding door systems for large openings",
-      image:
-        "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/sliding folding outer.jpg",
       products: ["MSFD50", "MSFD58 Premium Folding Door"],
     },
   ],
@@ -90,8 +86,7 @@ const subcategoriesData = {
       name: "Thermal Sliding Systems",
       description:
         "Energy-efficient sliding systems with thermal break technology",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/thermal sliding outer.jpg",
       products: [
         "MSTH75 Sliding",
         "150 Panoramic Sliding Doors",
@@ -102,8 +97,7 @@ const subcategoriesData = {
       id: "thermal-casement",
       name: "Thermal Casement Systems",
       description: "Insulated casement windows and doors with thermal break",
-      image:
-        "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/thermal-casement outer.jpg",
       products: ["MCTH50 Casement Windows", "MDTH50 Casement Doors"],
     },
   ],

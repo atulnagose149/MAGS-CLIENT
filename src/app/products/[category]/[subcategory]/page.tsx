@@ -18,8 +18,7 @@ const productsData = {
       name: "MSE22",
       description:
         "Minimalistic sliding system with 2-, 3- to 4-rail solutions for aesthetic applications",
-      image:
-        "",
+      image: "/products/MS22outer.jpg",
       specs: "Max weight: 100kg • Glass: 4-8mm • Minimalistic design",
     },
   ],
@@ -29,8 +28,7 @@ const productsData = {
       name: "MS20",
       description:
         "SLIM sliding system with minimalistic design offering 2-, 3- to 4-rail solutions",
-      image:
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/MS20outer.jpg",
       specs: "Max weight: 200kg • Glass: 5-24mm • Up to 4-rail solutions",
     },
     {
@@ -38,8 +36,7 @@ const productsData = {
       name: "MS27",
       description:
         "GULF SLIM sliding system with 2 and 3-rail solutions, optimized for Gulf climate applications",
-      image:
-        "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/MS27outer.jpg",
       specs: "Max weight: 200kg • Glass: 5-24mm • Gulf climate optimized",
     },
     {
@@ -47,8 +44,7 @@ const productsData = {
       name: "MS40",
       description:
         "Robust sliding system with monorail option and enhanced interlocking for warm climates",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/MS40outer.jpg",
       specs: "Max weight: 200kg • Glass: 5-24mm • Monorail depth: 101mm",
     },
     {
@@ -56,8 +52,7 @@ const productsData = {
       name: "MS40 Monorail",
       description:
         "Specialized monorail sliding system with 101mm depth for enhanced structural performance",
-      image:
-        "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/MS40 Monorailouter.jpg",
       specs: "Max weight: 200kg • Glass: 5-24mm • Monorail depth: 101mm",
     },
     {
@@ -65,8 +60,7 @@ const productsData = {
       name: "MS27 Gulf System",
       description:
         "GULF SLIM sliding system specifically designed for hot climates with enhanced durability",
-      image:
-        "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/GULF SLIM MS27outer.jpg",
       specs: "Max weight: 200kg • Glass: 5-24mm • Gulf climate optimized",
     },
     {
@@ -74,8 +68,7 @@ const productsData = {
       name: "MS50 Vertical Sliding",
       description:
         "Heavy-duty vertical sliding system for large openings with superior insulation and performance",
-      image:
-        "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/MS50 Vertical Slidingouter.jpg",
       specs: "Max weight: 600kg • Glass: 5-30mm • Large span capability",
     },
   ],
@@ -85,8 +78,7 @@ const productsData = {
       name: "MS11",
       description:
         "LA VISTA ultra-slim sliding system with large transparent surfaces and minimal sightlines",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/ms11outer.jpg",
       specs: "Max weight: 300kg • Glass: 5-30mm • Ultra-slim 31mm frame",
     },
     {
@@ -94,8 +86,7 @@ const productsData = {
       name: "MS18",
       description:
         "PREMIUM SLIM sliding system with ultimate performance and large transparent surfaces",
-      image:
-        "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/ms18outer.jpg",
       specs: "Max weight: 500kg • Glass: 5-30mm • Height up to 4500mm",
     },
     {
@@ -103,8 +94,7 @@ const productsData = {
       name: "MS22 Minimal",
       description:
         "PREMIUM MINIMAL sliding system with minimalist panoramic design and narrowest visible profile",
-      image:
-        "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/MS22 Minimal outer.jpg",
       specs: "Max weight: 300kg • Glass: 5-34mm • 29mm visible width",
     },
     {
@@ -112,8 +102,7 @@ const productsData = {
       name: "MS25",
       description:
         "PREMIUM SLIM sliding system with sleek design for large transparent surfaces and enhanced interlocking",
-      image:
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/ms25outer.jpg",
       specs: "Max weight: 300kg • Glass: 5-30mm • Height up to 4000mm",
     },
   ],
@@ -123,8 +112,7 @@ const productsData = {
       name: "MS16 Minimal",
       description:
         "ULTRA SLIM insulated sliding system with concealed frame and optimal panoramic views",
-      image:
-        "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/ms16-minimal outer.jpg",
       specs:
         "Max weight: 300kg • Glass: 5-24mm • Ultra slim 20mm visible width",
     },
@@ -133,8 +121,7 @@ const productsData = {
       name: "MS18 Panoramic Sliding Door",
       description:
         "PREMIUM SLIM panoramic sliding system with ultra-large dimensions and heavy-duty performance",
-      image:
-        "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/ms18-panoramic-sliding-door OUTER.jpg",
       specs: "Max weight: 600kg • Glass: 5-30mm • Large span capability",
     },
     {
@@ -142,8 +129,7 @@ const productsData = {
       name: "MS22 Panoramic",
       description:
         "PREMIUM MINIMAL PANORAMIC sliding system with narrowest visible profile for large transparent surfaces",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/ms22-panoramicOuter.jpg",
       specs: "Max weight: 300kg • Glass: 5-34mm • 29mm visible width",
     },
     {
@@ -151,8 +137,7 @@ const productsData = {
       name: "MS30 Slim Heavy-Duty Lift and Slide",
       description:
         "Heavy-duty lift and slide system with adjustable ventilation and superior sealing performance",
-      image:
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/ms30-slim-heavy-duty-lift-and-slide outer.jpg",
       specs:
         "Max weight: 300/400/600kg • Glass: 5-45mm • Lift and slide technology",
     },
@@ -163,8 +148,7 @@ const productsData = {
       name: "MCE28 Economy Casement",
       description:
         "Economy casement system for basic residential applications with outward opening functionality",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/mce28 outer.jpg",
       specs: "Max weight: 60kg • Glass: 4-8mm • Outward opening",
     },
     {
@@ -172,8 +156,7 @@ const productsData = {
       name: "MCE92 (Economy 3in1 Glass, Grill & Mesh)",
       description:
         "Economy 3-in-1 casement system with integrated glass, security grill, and mosquito mesh",
-      image:
-        "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/mce92 outer.jpg",
       specs: "Max weight: 60kg • Glass: 4-8mm • 3-in-1 system • Triple gasket",
     },
   ],
@@ -183,8 +166,7 @@ const productsData = {
       name: "MC45",
       description:
         "Premium non-insulated casement system with triple gaskets for tropical climate performance",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/mc45 outer.jpg",
       specs: "Max weight: 150kg • Glass: 5-35mm • Triple gasket system",
     },
     {
@@ -192,8 +174,7 @@ const productsData = {
       name: "MC105 (3in1 Glass, Grill & Mesh)",
       description:
         "Premium 3-in-1 casement system with integrated glass, security grill, and mosquito mesh",
-      image:
-        "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/mc105 outer.jpg",
       specs:
         "Max weight: 150kg • Glass: 5-35mm • 3-in-1 system • Deep 105mm frame",
     },
@@ -202,8 +183,7 @@ const productsData = {
       name: "MD45",
       description:
         "Premium casement door system with enhanced performance and durability",
-      image:
-        "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/md45 outer.jpg",
       specs: "Door system • Premium performance • Enhanced durability",
     },
   ],
@@ -213,8 +193,7 @@ const productsData = {
       name: "MSFD50",
       description:
         "Sliding folding system for large openings with high insulation and comfort",
-      image:
-        "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/msfd50 outter.jpg",
       specs: "Max weight: 120kg • Glass: 6-30mm • Multiple folding options",
     },
     {
@@ -222,8 +201,7 @@ const productsData = {
       name: "MSFD58 Premium Folding Door",
       description:
         "Premium folding door system with enhanced performance and aesthetics",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/msfd58-premium-folding-door outer.jpg",
       specs: "Premium folding • Enhanced performance • Large openings",
     },
   ],
@@ -233,8 +211,7 @@ const productsData = {
       name: "MSTH75 Sliding",
       description:
         "Thermal break sliding system with superior insulation properties",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      image: "/Products/MSTH75  OUTER.jpg",
       specs: "Thermal break • Superior insulation • Energy efficient",
     },
     {
@@ -242,8 +219,7 @@ const productsData = {
       name: "150 Panoramic Sliding Doors (Imported Hybrid System)",
       description:
         "High-performance panoramic sliding doors with imported hybrid technology",
-      image:
-        "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/panoramic-sliding-door outer.jpg",
       specs: "Imported hybrid system • Panoramic view • Premium performance",
     },
     {
@@ -251,8 +227,7 @@ const productsData = {
       name: "MSTH35 Slim Sliding",
       description:
         "Slim thermal break sliding system for energy-efficient applications",
-      image:
-        "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/mcth50-c555asement-windows outer.jpg",
       specs: "Slim profile • Thermal break • Energy efficient",
     },
   ],
@@ -262,8 +237,7 @@ const productsData = {
       name: "MCTH50 Casement Windows",
       description:
         "Thermal break casement windows with superior insulation properties",
-      image:
-        "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/MCTH50 Casement Windows outer.jpg",
       specs: "Thermal break • Superior insulation • Window system",
     },
     {
@@ -271,8 +245,7 @@ const productsData = {
       name: "MDTH50 Casement Doors",
       description:
         "Thermal break casement doors for inward and outward opening applications",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+      image: "/products/mdth50-casement-doors  outer.jpg",
       specs: "Thermal break • Door system • Inward/outward opening",
     },
   ],

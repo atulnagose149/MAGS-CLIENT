@@ -11,7 +11,7 @@ const productData = {
     description:
       "MAGS Economy Sliding MSE63 is a non-insulated sliding system offering a wide range of solutions ideal for applications in warm climates, winter gardens or the partitioning of indoor office spaces. MSE63 applies the latest techniques, designed according to the highest European quality standards. This sliding system offers a complete range of opening possibilities, from sliding elements in the wall to 2- and 3-solutions. MSE63 realises an aesthetic solution for your building. In addition, the sliding elements can easily be integrated with different types of windows, conservatory systems, sunscreens, and screen doors.",
     images: [
-      "/products/MSE63!.jpg",
+      // "/products/MSE63!.jpg",
       "/products/MSE63.jpg",
       "/products/MSE63@.jpg",
     ],
@@ -333,11 +333,7 @@ const productData = {
     fullName: "MAGS MS50 VERTICAL SLIDING SYSTEM",
     description:
       "MAGS CASEMENT DOORS SYSTEM MDTH50 is a insulated system for inward and outward opening doors, designed according to the highest European quality standards. To guarantee superior quality and performance in every situation, the system has three gasket levels for inward and outward opening doors. Through intelligent application, these multiple gaskets meet even the high air- and water tightness requirements of tropical regions. This simple, yet highly innovative design offers a very cost-efficient solution thanks to its optimised fabrication process. MDTH50 can be realised with all types of inward and outward opening doors, with an extensive choice of accessories the perfect match of building concepts.",
-    images: [
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: ["/products/MS50 Vertical Sliding.jpg"],
     performance: {
       comfort: {
         airTightness: "-",
@@ -589,11 +585,7 @@ const productData = {
     fullName: "MAGS PREMIUM SLIM SLIDING SYSTEM MS18",
     description:
       "MAGS PREMIUM SLIM SLIDING SYSTEM MS18 Enjoy view with ultimate performances! The ultra-slim design of the MS18 sliding door creates large transparent surfaces with a light, sleek, and elegant appearance. This fully transparent and accessible sliding door seamlessly extends the house's interior to the outside. Despite the minimal visual sidelines, the system's high strength allows MS18 to carry the weight of a large sliding glass pane up to 300 kilograms. Fixed panels up to 600 kg. This, in combination with the high energy performance and the minimalistic look, makes this product the best solution architecture.",
-    images: [
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628744404730-5e143358539b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: ["/products/MAGS PREMIUM SLIM SLIDING SYSTEM MS18 inner.jpg"],
     performance: {
       comfort: {
         airTightness: "-",
@@ -979,11 +971,7 @@ const productData = {
     fullName: "MAGS MSFD58 Premium Folding Door",
     description:
       "MAGS MSFD58 Premium Folding Door features anti-pinch design with enhanced noise reduction and multiple opening options. This premium folding system can be designed as one-piece or thermal break configuration to meet specific project requirements. The system offers superior performance with advanced safety features and acoustic properties, making it ideal for high-end residential and commercial applications where both functionality and comfort are paramount.",
-    images: [
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: ["/products/MSFD58 Premium Folding Door inner.jpg"],
     performance: {
       comfort: {
         airTightness: "-",
