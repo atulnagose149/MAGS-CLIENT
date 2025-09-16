@@ -10,6 +10,7 @@ export default function AboutSection() {
   const [servicesVisible, setServicesVisible] = useState(false);
   const [valuesVisible, setValuesVisible] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  // test
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const teamRef = useRef<HTMLDivElement>(null);
