@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import gsap from "gsap";
 
 export default function AboutSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +11,6 @@ export default function AboutSection() {
   const [servicesVisible, setServicesVisible] = useState(false);
   const [valuesVisible, setValuesVisible] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  // test
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const teamRef = useRef<HTMLDivElement>(null);
@@ -40,9 +40,50 @@ export default function AboutSection() {
       if (ref.current) observer.observe(ref.current);
     });
 
+    // GSAP hover animations
+    const ctx = gsap.context(() => {
+      // Button hover animations
+      const buttons = gsap.utils.toArray(".hover-button");
+      buttons.forEach((button: unknown) => {
+        const element = button as HTMLElement;
+        const overlay = element.querySelector(".button-overlay");
+
+        element.addEventListener("mouseenter", () => {
+          gsap.to(element, {
+            scale: 1.05,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+          if (overlay) {
+            gsap.to(overlay, {
+              opacity: 1,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          }
+        });
+
+        element.addEventListener("mouseleave", () => {
+          gsap.to(element, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+          if (overlay) {
+            gsap.to(overlay, {
+              opacity: 0,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          }
+        });
+      });
+    });
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       observer.disconnect();
+      ctx.revert();
     };
   }, []);
 
@@ -54,9 +95,7 @@ export default function AboutSection() {
         <div
           className="absolute inset-0 w-full h-full"
           style={{
-            //  backgroundImage: `url('/aboutbanner.jpg')`,
             backgroundImage: `url('/WhyChooseMAGS.jpg')`,
-
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundAttachment: "fixed",
@@ -72,7 +111,9 @@ export default function AboutSection() {
           <div className="space-y-6 sm:space-y-8">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white mt-30">
               Engineering-led
-              <span className="block text-amber-400">excellence</span>
+              <span className="block text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+                excellence
+              </span>
               in every detail
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-4xl mx-auto px-4">
@@ -83,9 +124,24 @@ export default function AboutSection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link
                 href="/projects"
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors text-sm sm:text-base"
+                className="hover-button relative inline-block font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-300 overflow-hidden cursor-pointer text-sm sm:text-base"
+                style={{
+                  backgroundColor: "#0F172B",
+                  color: "white",
+                  border: "1px solid #475569",
+                }}
               >
-                Our Projects
+                {/* Button Overlay */}
+                <div
+                  className="button-overlay absolute inset-0 opacity-0 rounded-lg"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #2055AB 0%, #2055AB 100%)",
+                    pointerEvents: "none",
+                  }}
+                ></div>
+
+                <span className="relative z-10">Our Projects</span>
               </Link>
             </div>
           </div>
@@ -100,13 +156,13 @@ export default function AboutSection() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             <div className="lg:sticky lg:top-24 mb-8 lg:mb-0">
-              <h2 className="text-sm font-bold text-amber-400 uppercase tracking-wide mb-4">
+              <h2 className="text-sm font-bold text-white uppercase tracking-wide mb-4">
                 A Few Words
               </h2>
               <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6 lg:mb-8">
                 About Us
               </h3>
-              <div className="w-16 h-1 bg-amber-600 mb-6 lg:mb-8"></div>
+              <div className="w-16 h-1 bg-white mb-6 lg:mb-8"></div>
 
               {/* Single About Us Image */}
               <div className="mb-6">
@@ -150,7 +206,7 @@ export default function AboutSection() {
                 and design innovation across diverse climate conditions.
               </p>
 
-              <blockquote className="border-l-4 border-amber-600 pl-4 sm:pl-6 italic text-gray-400 mt-6 sm:mt-8">
+              <blockquote className="border-l-4 border-white pl-4 sm:pl-6 italic text-gray-400 mt-6 sm:mt-8">
                 "What truly sets us apart is our commitment to engineering
                 excellence and our ability to translate complex architectural
                 visions into precision-manufactured reality."
@@ -204,7 +260,7 @@ export default function AboutSection() {
                   },
                 ].map((value, index) => (
                   <div key={index} className="flex gap-3 sm:gap-4">
-                    <div className="w-3 h-3 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-white rounded-full mt-2 flex-shrink-0"></div>
                     <div>
                       <h3 className="text-base sm:text-lg font-bold text-white mb-1 sm:mb-2">
                         {value.title}

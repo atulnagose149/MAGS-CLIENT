@@ -115,17 +115,7 @@ export default function HeroSection() {
               "2px 2px 8px rgba(0,0,0,0.9), 0 0 25px rgba(0,0,0,0.7), -1px -1px 2px rgba(0,0,0,0.8)",
           }}
         >
-          Innovative Aluminum{" "}
-          <span
-            className="text-amber-300"
-            style={{
-              textShadow:
-                "2px 2px 8px rgba(0,0,0,0.9), 0 0 25px rgba(0,0,0,0.7)",
-            }}
-          >
-            Glazing
-          </span>{" "}
-          Solutions
+          Innovative Aluminum Glazing Solutions
         </h1>
 
         <p
@@ -141,10 +131,10 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             href="/products"
-            className="group relative px-8 py-4 bg-amber-500 text-neutral-900 font-semibold rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 shadow-xl hover:shadow-2xl hover:bg-amber-400 overflow-hidden inline-block"
+            className="group relative px-8 py-4 bg-[#1D4D85] text-white font-semibold rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 shadow-xl hover:shadow-2xl overflow-hidden inline-block"
             style={{
               boxShadow:
-                "0 10px 25px rgba(0,0,0,0.3), 0 0 0 1px rgba(245,158,11,0.5)",
+                "0 10px 25px rgba(0,0,0,0.3), 0 0 0 1px rgba(15,23,43,0.5)", // adjusted to #0F172B
             }}
             onMouseEnter={(e) => {
               gsap.to(e.currentTarget, {
@@ -164,8 +154,10 @@ export default function HeroSection() {
             }}
           >
             <span className="relative z-10">Explore Products</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            {/* Gradient overlay updated with a subtle blue tint */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0F172B] to-[#1E2A4D] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </Link>
+
           <a
             href="#contact"
             className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/80 text-white font-semibold rounded-lg hover:bg-white/20 hover:border-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg"

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import gsap from "gsap";
 
 export default function ContactSection() {
   const [fileName, setFileName] = useState("No file chosen");
@@ -32,7 +33,35 @@ export default function ContactSection() {
       observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect();
+    // GSAP hover animations (only scale now, no color overlays)
+    const ctx = gsap.context(() => {
+      // Button hover animations
+      const buttons = gsap.utils.toArray(".hover-button");
+      buttons.forEach((button: unknown) => {
+        const element = button as HTMLElement;
+
+        element.addEventListener("mouseenter", () => {
+          gsap.to(element, {
+            scale: 1.05,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+
+        element.addEventListener("mouseleave", () => {
+          gsap.to(element, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+      });
+    }, sectionRef);
+
+    return () => {
+      observer.disconnect();
+      ctx.revert();
+    };
   }, []);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -109,24 +138,31 @@ export default function ContactSection() {
           style={{ background: "transparent" }}
         />
 
-        {/* Map Control - Open in Google Maps Button - Responsive positioning */}
+        {/* Map Control - Open in Google Maps Button */}
         <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 md:bottom-6 md:left-6 z-20">
           <button
             onClick={openInGoogleMaps}
-            className="bg-amber-500 hover:bg-amber-600 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg shadow-lg transition-colors text-xs sm:text-sm font-medium flex items-center gap-1 sm:gap-2"
+            className="hover-button relative font-semibold px-3 py-2 sm:px-4 sm:py-2 rounded-lg shadow-lg transition-all duration-300 cursor-pointer text-xs sm:text-sm flex items-center gap-1 sm:gap-2"
+            style={{
+              backgroundColor: "#0F172B",
+              color: "white",
+              border: "1px solid #475569",
+            }}
             title="Open in Google Maps"
           >
-            <svg
-              width="14"
-              height="14"
-              className="sm:w-4 sm:h-4"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-            </svg>
-            <span className="hidden xs:inline">Open</span>
-            <span className="hidden sm:inline">Map</span>
+            <span className="relative z-10 flex items-center gap-1 sm:gap-2">
+              <svg
+                width="14"
+                height="14"
+                className="sm:w-4 sm:h-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+              <span className="hidden xs:inline">Open</span>
+              <span className="hidden sm:inline">Map</span>
+            </span>
           </button>
         </div>
       </div>
@@ -138,10 +174,13 @@ export default function ContactSection() {
           isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
         }`}
       >
-        <div className="bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/85 backdrop-blur-lg shadow-2xl rounded-2xl p-4 sm:p-5 md:p-6 border border-slate-700/60">
-          <div className="text-center">
+        <div
+          className="relative shadow-2xl rounded-2xl p-4 sm:p-5 md:p-6 border border-slate-600 overflow-hidden transition-all duration-300"
+          style={{ backgroundColor: "#0F172B" }}
+        >
+          <div className="relative z-10 text-center">
             <h2
-              className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.25)] mb-3 md:mb-4 transform transition-all duration-1000 ease-out ${
+              className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.25)] mb-3 md:mb-4 transform transition-all duration-1000 ease-out ${
                 isVisible
                   ? "translate-y-0 opacity-100"
                   : "translate-y-10 opacity-0"
@@ -151,7 +190,7 @@ export default function ContactSection() {
             </h2>
 
             <p
-              className={`text-white mb-4 md:mb-6 text-xs sm:text-sm leading-relaxed transform transition-all duration-1000 ease-out delay-200 ${
+              className={`text-white/90 mb-4 md:mb-6 text-xs sm:text-sm leading-relaxed transform transition-all duration-1000 ease-out delay-200 ${
                 isVisible
                   ? "translate-y-0 opacity-100"
                   : "translate-y-10 opacity-0"
@@ -161,7 +200,7 @@ export default function ContactSection() {
               relevant files (PDF only).
             </p>
 
-            {/* Status Message - Responsive */}
+            {/* Status Message */}
             {statusMessage && (
               <div
                 className={`mb-3 md:mb-4 p-2 md:p-3 rounded-lg text-xs sm:text-sm font-medium ${
@@ -198,7 +237,7 @@ export default function ContactSection() {
                   name="user_name"
                   placeholder="Enter your name"
                   required
-                  className="w-full border border-slate-600 bg-slate-800/90 text-white rounded-lg px-3 py-2 sm:py-2.5 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none placeholder-slate-400 text-xs sm:text-sm transition-all"
+                  className="w-full border border-slate-600 bg-slate-800/90 text-white rounded-lg px-3 py-2 sm:py-2.5 focus:ring-2 focus:ring-white focus:border-white focus:outline-none placeholder-slate-400 text-xs sm:text-sm transition-all"
                 />
               </div>
 
@@ -217,7 +256,7 @@ export default function ContactSection() {
                   name="user_email"
                   placeholder="Enter your email"
                   required
-                  className="w-full border border-slate-600 bg-slate-800/90 text-white rounded-lg px-3 py-2 sm:py-2.5 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none placeholder-slate-400 text-xs sm:text-sm transition-all"
+                  className="w-full border border-slate-600 bg-slate-800/90 text-white rounded-lg px-3 py-2 sm:py-2.5 focus:ring-2 focus:ring-white focus:border-white focus:outline-none placeholder-slate-400 text-xs sm:text-sm transition-all"
                 />
               </div>
 
@@ -235,7 +274,7 @@ export default function ContactSection() {
                   type="tel"
                   name="user_phone"
                   placeholder="+91 9876543210"
-                  className="w-full border border-slate-600 bg-slate-800/90 text-white rounded-lg px-3 py-2 sm:py-2.5 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none placeholder-slate-400 text-xs sm:text-sm transition-all"
+                  className="w-full border border-slate-600 bg-slate-800/90 text-white rounded-lg px-3 py-2 sm:py-2.5 focus:ring-2 focus:ring-white focus:border-white focus:outline-none placeholder-slate-400 text-xs sm:text-sm transition-all"
                 />
               </div>
 
@@ -254,72 +293,52 @@ export default function ContactSection() {
                   name="message"
                   placeholder="Type your message..."
                   required
-                  className="w-full border border-slate-600 bg-slate-800/90 text-white rounded-lg px-3 py-2 sm:py-2.5 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none placeholder-slate-400 text-xs sm:text-sm resize-none transition-all"
+                  className="w-full border border-slate-600 bg-slate-800/90 text-white rounded-lg px-3 py-2 sm:py-2.5 focus:ring-2 focus:ring-white focus:border-white focus:outline-none placeholder-slate-400 text-xs sm:text-sm resize-none transition-all"
                 ></textarea>
               </div>
-
-              {/* <div
-                className={`transform transition-all duration-1000 ease-out delay-1000 ${
-                  isVisible
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-10 opacity-0"
-                }`}
-              >
-                <label className="block font-medium text-white mb-1 text-xs sm:text-sm">
-                  Attach File (PDF only)
-                </label>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
-                  <label className="cursor-pointer bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white px-3 py-2 rounded-lg transition-all text-xs sm:text-sm font-medium whitespace-nowrap">
-                    Upload File
-                    <input
-                      type="file"
-                      name="attachment"
-                      accept=".pdf"
-                      className="hidden"
-                      onChange={handleFileChange}
-                    />
-                  </label>
-                  <span className="text-slate-300 text-xs flex-1 truncate mt-1 sm:mt-0">
-                    {fileName}
-                  </span>
-                </div>
-              </div> */}
 
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`w-full bg-gradient-to-r from-amber-500 via-orange-600 to-red-600 hover:from-amber-600 hover:via-orange-700 hover:to-red-700 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white font-semibold py-2.5 sm:py-3 rounded-lg transition-all duration-1000 ease-out delay-1100 text-xs sm:text-sm transform ${
+                className={`hover-button relative w-full font-semibold py-2.5 sm:py-3 rounded-lg transition-all duration-1000 ease-out delay-1100 text-xs sm:text-sm transform overflow-hidden ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
                 } ${isLoading ? "cursor-not-allowed" : "cursor-pointer"}`}
+                style={{
+                  backgroundColor: "#0F172B",
+                  color: "white",
+                  border: "1px solid #475569",
+                }}
               >
-                {isLoading ? (
-                  <div className="flex items-center justify-center gap-2">
-                    <svg
-                      className="animate-spin h-3 w-3 sm:h-4 sm:w-4"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                        fill="none"
-                      />
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                      />
-                    </svg>
-                    <span>Sending...</span>
-                  </div>
-                ) : (
-                  "Submit Request"
-                )}
+                <span className="relative z-10">
+                  {isLoading ? (
+                    <div className="flex items-center justify-center gap-2">
+                      <svg
+                        className="animate-spin h-3 w-3 sm:h-4 sm:w-4"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                          fill="none"
+                        />
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        />
+                      </svg>
+                      <span>Sending...</span>
+                    </div>
+                  ) : (
+                    "Submit Request"
+                  )}
+                </span>
               </button>
             </form>
           </div>

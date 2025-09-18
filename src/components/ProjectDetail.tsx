@@ -59,6 +59,39 @@ export default function ProjectDetail({ slug }: ProjectDetailProps) {
           },
         }
       );
+
+      // Card hover animations (only for sidebar)
+      const hoverCards = gsap.utils.toArray(".hover-card");
+      hoverCards.forEach((card: unknown) => {
+        const element = card as HTMLElement;
+        const overlay = element.querySelector(".gradient-overlay");
+
+        element.addEventListener("mouseenter", () => {
+          gsap.to(element, {
+            y: -8,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+          gsap.to(overlay, {
+            opacity: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+
+        element.addEventListener("mouseleave", () => {
+          gsap.to(element, {
+            y: 0,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+          gsap.to(overlay, {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -69,10 +102,7 @@ export default function ProjectDetail({ slug }: ProjectDetailProps) {
       <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
-          <Link
-            href="/projects"
-            className="text-amber-500 hover:text-amber-400"
-          >
+          <Link href="/projects" className="text-white hover:text-white/80">
             ← Back to Projects
           </Link>
         </div>
@@ -86,14 +116,11 @@ export default function ProjectDetail({ slug }: ProjectDetailProps) {
       <div className="bg-gray-800 py-4 px-6">
         <div className="max-w-7xl mx-auto">
           <nav className="flex items-center space-x-2 text-sm">
-            <Link href="/" className="text-amber-500 hover:text-amber-400">
+            <Link href="/" className="text-white hover:text-white/80">
               Home
             </Link>
             <span className="text-gray-400">/</span>
-            <Link
-              href="/projects"
-              className="text-amber-500 hover:text-amber-400"
-            >
+            <Link href="/projects" className="text-white hover:text-white/80">
               Projects
             </Link>
             <span className="text-gray-400">/</span>
@@ -119,31 +146,31 @@ export default function ProjectDetail({ slug }: ProjectDetailProps) {
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main Content */}
             <div className="lg:col-span-2">
-              <h1 className="project-title text-4xl md:text-5xl font-bold mb-6">
+              <h1 className="project-title text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.25)]">
                 {project.title}
               </h1>
 
               <div className="project-content space-y-8">
                 {/* Project Overview */}
                 <div>
-                  <h2 className="text-2xl font-bold mb-4 text-amber-400">
+                  <h2 className="text-2xl font-bold mb-4 text-white">
                     Project Overview
                   </h2>
-                  <p className="text-xl text-gray-300 leading-relaxed">
+                  <p className="text-xl text-white/90 leading-relaxed">
                     {project.overview}
                   </p>
                 </div>
 
                 {/* Key Features */}
                 <div>
-                  <h2 className="text-2xl font-bold mb-4 text-amber-400">
+                  <h2 className="text-2xl font-bold mb-4 text-white">
                     Key Features Delivered
                   </h2>
                   <ul className="space-y-3">
                     {project.keyFeatures.map((feature, index) => (
                       <li key={index} className="flex items-start">
-                        <span className="inline-block w-2 h-2 bg-amber-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span className="text-gray-300">{feature}</span>
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span className="text-white/80">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -151,18 +178,18 @@ export default function ProjectDetail({ slug }: ProjectDetailProps) {
 
                 {/* Value to Client */}
                 <div>
-                  <h2 className="text-2xl font-bold mb-4 text-amber-400">
+                  <h2 className="text-2xl font-bold mb-4 text-white">
                     Value to Client
                   </h2>
-                  <p className="text-lg text-gray-300 leading-relaxed">
+                  <p className="text-lg text-white/90 leading-relaxed">
                     {project.valueToClient}
                   </p>
                 </div>
 
-                {/* Gallery */}
+                {/* Gallery - CORRECTED: No hover overlays that block images */}
                 {project.images.length > 1 && (
                   <div className="gallery-section">
-                    <h2 className="text-2xl font-bold mb-6 text-amber-400">
+                    <h2 className="text-2xl font-bold mb-6 text-white">
                       Project Gallery
                     </h2>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -185,65 +212,58 @@ export default function ProjectDetail({ slug }: ProjectDetailProps) {
               </div>
             </div>
 
-            {/* Sidebar */}
+            {/* Sidebar - ONLY this has hover effects */}
             <div className="lg:col-span-1">
-              <div className="bg-gray-800 p-6 rounded-lg sticky top-24">
-                <h3 className="text-xl font-bold mb-6">Project Information</h3>
+              <div
+                className="hover-card relative p-6 rounded-lg sticky top-24 transition-all duration-300 overflow-hidden"
+                style={{ backgroundColor: "#0F172B" }}
+              >
+                {/* Gradient Overlay */}
+                <div
+                  className="gradient-overlay absolute inset-0 opacity-0 rounded-lg"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #2055AB 0%, #2055AB 100%)",
+                    pointerEvents: "none",
+                  }}
+                ></div>
 
-                <div className="space-y-4">
-                  <div className="project-info">
-                    <h4 className="font-semibold text-amber-400">Project</h4>
-                    <p className="text-gray-300">{project.title}</p>
-                  </div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold mb-6 text-white">
+                    Project Information
+                  </h3>
 
-                  <div className="project-info">
-                    <h4 className="font-semibold text-amber-400">Location</h4>
-                    <p className="text-gray-300">📍 {project.location}</p>
-                  </div>
+                  <div className="space-y-4">
+                    <div className="project-info">
+                      <h4 className="font-semibold text-white">Project</h4>
+                      <p className="text-white/80">{project.title}</p>
+                    </div>
 
-                  <div className="project-info">
-                    <h4 className="font-semibold text-amber-400">
-                      Product Installed
-                    </h4>
-                    <p className="text-gray-300">{project.productInstalled}</p>
+                    <div className="project-info">
+                      <h4 className="font-semibold text-white">Location</h4>
+                      <p className="text-white/80">📍 {project.location}</p>
+                    </div>
+
+                    <div className="project-info">
+                      <h4 className="font-semibold text-white">
+                        Product Installed
+                      </h4>
+                      <p className="text-white/80">
+                        {project.productInstalled}
+                      </p>
+                    </div>
                   </div>
                 </div>
-
-                {/* Share Section */}
-                {/* <div className="mt-8 pt-6 border-t border-gray-700">
-                  <h4 className="font-semibold mb-4">Share:</h4>
-                  <div className="flex space-x-3">
-                    {[
-                      { name: "Facebook", icon: "📘" },
-                      { name: "Twitter", icon: "🐦" },
-                      { name: "LinkedIn", icon: "💼" },
-                      { name: "WhatsApp", icon: "💬" },
-                    ].map((platform) => (
-                      <button
-                        key={platform.name}
-                        className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-amber-500 hover:text-black transition-colors text-lg"
-                        title={`Share on ${platform.name}`}
-                      >
-                        {platform.icon}
-                      </button>
-                    ))}
-                  </div>
-                </div> */}
-
-                {/* CTA Button */}
-                {/* <button className="w-full mt-6 px-6 py-3 bg-amber-500 text-black font-semibold rounded-lg hover:bg-amber-400 transition-colors">
-                  Get Similar Quote
-                </button> */}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Related Projects */}
+      {/* Related Projects - CORRECTED: No overlays blocking images */}
       <section className="py-16 px-6 bg-gray-800">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">
+          <h2 className="text-3xl font-bold mb-8 text-center text-white">
             Other Projects
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -264,10 +284,10 @@ export default function ProjectDetail({ slug }: ProjectDetailProps) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="font-bold text-lg">
+                    <h3 className="font-bold text-lg text-white">
                       {relatedProject.title}
                     </h3>
-                    <p className="text-amber-400 text-sm">
+                    <p className="text-white/90 text-sm">
                       📍 {relatedProject.location}
                     </p>
                   </div>

@@ -17,12 +17,15 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Check initial scroll position
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
 
   // Smooth scroll to section function
   const scrollToSection = (sectionId: string) => {
@@ -84,18 +87,14 @@ export default function Navbar() {
             onClick={() => scrollToSection("hero")}
             className="cursor-pointer hover:opacity-80 transition-all duration-300 transform hover:scale-105"
           >
-            <div className="bg-white/20">
-              {" "}
-              {/* Light transparent white */}
-              <Image
-                src="/LOGO2.png"
-                alt="MAGS Logo"
-                width={350}
-                height={175}
-                className="h-12 sm:h-16 w-auto object-contain"
-                priority
-              />
-            </div>
+            <Image
+              src={isTransparent ? "/LOGO2.png" : "/LOGO.jpg"}
+              alt="MAGS Logo"
+              width={200}
+              height={100}
+              className="h-12 sm:h-16 w-auto object-contain"
+              priority
+            />
           </button>
         ) : (
           <Link
@@ -121,8 +120,8 @@ export default function Navbar() {
               onClick={() => scrollToSection("hero")}
               className={`transition-colors duration-300 cursor-pointer font-medium ${
                 isTransparent
-                  ? "text-white hover:text-amber-300"
-                  : "text-gray-700 hover:text-amber-600"
+                  ? "text-white hover:text-white/80"
+                  : "text-gray-800 hover:text-[#2055AB]"
               }`}
               style={
                 isTransparent
@@ -135,7 +134,7 @@ export default function Navbar() {
           ) : (
             <Link
               href="/"
-              className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium text-gray-700"
+              className="text-gray-800 hover:text-[#2055AB] transition-colors duration-300 cursor-pointer font-medium"
             >
               Home
             </Link>
@@ -147,8 +146,8 @@ export default function Navbar() {
               onClick={() => setIsDesktopDropdownOpen(!isDesktopDropdownOpen)}
               className={`transition-colors duration-300 cursor-pointer flex items-center font-medium ${
                 isTransparent
-                  ? "text-white hover:text-amber-300"
-                  : "text-gray-700 hover:text-amber-600"
+                  ? "text-white hover:text-white/80"
+                  : "text-gray-800 hover:text-[#2055AB]"
               }`}
               style={
                 isTransparent
@@ -182,37 +181,30 @@ export default function Navbar() {
                   : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
               }`}
             >
-              {/* <Link
-                href="/products"
-                className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-semibold border-b border-gray-100 text-gray-700"
-                onClick={() => setIsDesktopDropdownOpen(false)}
-              >
-                All Products
-              </Link> */}
               <Link
                 href="/products/sliding-windows-and-doors"
-                className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 text-gray-700"
+                className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-[#2055AB]/10 hover:text-[#2055AB] transition-colors duration-300"
                 onClick={() => setIsDesktopDropdownOpen(false)}
               >
                 Sliding Windows and Doors
               </Link>
               <Link
                 href="/products/casement-windows-and-doors"
-                className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 text-gray-700"
+                className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-[#2055AB]/10 hover:text-[#2055AB] transition-colors duration-300"
                 onClick={() => setIsDesktopDropdownOpen(false)}
               >
                 Casement Windows and Doors
               </Link>
               <Link
                 href="/products/sliding-folding"
-                className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 text-gray-700"
+                className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-[#2055AB]/10 hover:text-[#2055AB] transition-colors duration-300"
                 onClick={() => setIsDesktopDropdownOpen(false)}
               >
                 Sliding Folding
               </Link>
               <Link
                 href="/products/thermal-brake-system"
-                className="block w-full text-left px-4 py-2 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 text-gray-700"
+                className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-[#2055AB]/10 hover:text-[#2055AB] transition-colors duration-300"
                 onClick={() => setIsDesktopDropdownOpen(false)}
               >
                 Thermal Brake System
@@ -220,13 +212,13 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Project */}
+          {/* Projects */}
           <Link
             href="/projects"
             className={`transition-colors duration-300 cursor-pointer font-medium ${
               isTransparent
-                ? "text-white hover:text-amber-300"
-                : "text-gray-700 hover:text-amber-600"
+                ? "text-white hover:text-white/80"
+                : "text-gray-800 hover:text-[#2055AB]"
             }`}
             style={
               isTransparent ? { textShadow: "1px 1px 3px rgba(0,0,0,0.7)" } : {}
@@ -234,13 +226,14 @@ export default function Navbar() {
           >
             Projects
           </Link>
+
           {/* Gallery */}
           <Link
             href="/gallery"
             className={`transition-colors duration-300 cursor-pointer font-medium ${
               isTransparent
-                ? "text-white hover:text-amber-300"
-                : "text-gray-700 hover:text-amber-600"
+                ? "text-white hover:text-white/80"
+                : "text-gray-800 hover:text-[#2055AB]"
             }`}
             style={
               isTransparent ? { textShadow: "1px 1px 3px rgba(0,0,0,0.7)" } : {}
@@ -254,8 +247,8 @@ export default function Navbar() {
             href="/about"
             className={`transition-colors duration-300 cursor-pointer font-medium ${
               isTransparent
-                ? "text-white hover:text-amber-300"
-                : "text-gray-700 hover:text-amber-600"
+                ? "text-white hover:text-white/80"
+                : "text-gray-800 hover:text-[#2055AB]"
             }`}
             style={
               isTransparent ? { textShadow: "1px 1px 3px rgba(0,0,0,0.7)" } : {}
@@ -270,8 +263,8 @@ export default function Navbar() {
               onClick={() => scrollToSection("contact")}
               className={`transition-colors duration-300 cursor-pointer font-medium ${
                 isTransparent
-                  ? "text-white hover:text-amber-300"
-                  : "text-gray-700 hover:text-amber-600"
+                  ? "text-white hover:text-white/80"
+                  : "text-gray-800 hover:text-[#2055AB]"
               }`}
               style={
                 isTransparent
@@ -284,7 +277,7 @@ export default function Navbar() {
           ) : (
             <Link
               href="/#contact"
-              className="hover:text-amber-600 transition-colors duration-300 cursor-pointer font-medium text-gray-700"
+              className="text-gray-800 hover:text-[#2055AB] transition-colors duration-300 cursor-pointer font-medium"
             >
               Contact
             </Link>
@@ -297,8 +290,8 @@ export default function Navbar() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`transition-colors duration-300 p-2 ${
               isTransparent
-                ? "text-white hover:text-amber-300"
-                : "text-gray-700 hover:text-amber-600"
+                ? "text-white hover:text-white/80"
+                : "text-gray-800 hover:text-[#2055AB]"
             }`}
             style={
               isTransparent
@@ -342,42 +335,42 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={closeMobileMenu}
-            className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium text-gray-700"
+            className="block w-full text-left py-3 px-2 rounded-lg text-gray-800 hover:bg-[#2055AB]/10 hover:text-[#2055AB] transition-colors duration-300 font-medium"
           >
             Home
           </Link>
           <Link
             href="/products"
             onClick={closeMobileMenu}
-            className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-semibold text-gray-700"
+            className="block w-full text-left py-3 px-2 rounded-lg text-gray-800 hover:bg-[#2055AB]/10 hover:text-[#2055AB] transition-colors duration-300 font-semibold"
           >
             Products
           </Link>
           <Link
             href="/projects"
             onClick={closeMobileMenu}
-            className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-semibold text-gray-700"
+            className="block w-full text-left py-3 px-2 rounded-lg text-gray-800 hover:bg-[#2055AB]/10 hover:text-[#2055AB] transition-colors duration-300 font-semibold"
           >
             Projects
           </Link>
           <Link
             href="/gallery"
             onClick={closeMobileMenu}
-            className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium text-gray-700"
+            className="block w-full text-left py-3 px-2 rounded-lg text-gray-800 hover:bg-[#2055AB]/10 hover:text-[#2055AB] transition-colors duration-300 font-medium"
           >
             Gallery
           </Link>
           <Link
             href="/about"
             onClick={closeMobileMenu}
-            className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium text-gray-700"
+            className="block w-full text-left py-3 px-2 rounded-lg text-gray-800 hover:bg-[#2055AB]/10 hover:text-[#2055AB] transition-colors duration-300 font-medium"
           >
             About Us
           </Link>
           <Link
             href="/#contact"
             onClick={closeMobileMenu}
-            className="block w-full text-left py-3 px-2 rounded-lg hover:bg-amber-50 hover:text-amber-600 transition-colors duration-300 font-medium text-gray-700"
+            className="block w-full text-left py-3 px-2 rounded-lg text-gray-800 hover:bg-[#2055AB]/10 hover:text-[#2055AB] transition-colors duration-300 font-medium"
           >
             Contact
           </Link>

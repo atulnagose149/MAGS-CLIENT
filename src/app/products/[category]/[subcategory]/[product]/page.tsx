@@ -2,7 +2,12 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ImageCarousel from "@/components/ImageCarousel";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const productData = {
   mse63: {
@@ -1239,24 +1244,101 @@ export default function ProductDetailPage() {
   const category = params.category as string;
   const subcategory = params.subcategory as string;
   const productId = params.product as string;
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   const product =
     productId in productData
       ? productData[productId as keyof typeof productData]
       : undefined;
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Card hover animations
+      const hoverCards = gsap.utils.toArray(".hover-card");
+      hoverCards.forEach((card: unknown) => {
+        const element = card as HTMLElement;
+        const overlay = element.querySelector(".gradient-overlay");
+
+        element.addEventListener("mouseenter", () => {
+          gsap.to(element, {
+            y: -8,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+          gsap.to(overlay, {
+            opacity: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+
+        element.addEventListener("mouseleave", () => {
+          gsap.to(element, {
+            y: 0,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+          gsap.to(overlay, {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+      });
+
+      // Button hover animations
+      const buttons = gsap.utils.toArray(".hover-button");
+      buttons.forEach((button: unknown) => {
+        const element = button as HTMLElement;
+        const overlay = element.querySelector(".button-overlay");
+
+        element.addEventListener("mouseenter", () => {
+          gsap.to(element, {
+            scale: 1.05,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+          if (overlay) {
+            gsap.to(overlay, {
+              opacity: 1,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          }
+        });
+
+        element.addEventListener("mouseleave", () => {
+          gsap.to(element, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+          if (overlay) {
+            gsap.to(overlay, {
+              opacity: 0,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          }
+        });
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   if (!product) {
     return (
-      <div className="min-h-screen bg-[#0F172B] flex items-center justify-center">
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
         <div className="text-white text-xl">Product not found</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0F172B]">
+    <div ref={sectionRef} className="min-h-screen bg-slate-900">
       {/* Breadcrumb */}
-      <div className="bg-[#0F172B] border-b border-gray-700">
+      <div className="bg-slate-900 border-b border-slate-700">
         <div
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4"
           style={{
@@ -1264,23 +1346,20 @@ export default function ProductDetailPage() {
           }}
         >
           <nav className="flex space-x-2 text-sm">
-            <Link
-              href="/products"
-              className="text-amber-400 hover:text-amber-300"
-            >
+            <Link href="/products" className="text-white hover:text-white/80">
               Products
             </Link>
             <span className="text-gray-500">/</span>
             <Link
               href={`/products/${category}`}
-              className="text-amber-400 hover:text-amber-300 capitalize"
+              className="text-white hover:text-white/80 capitalize"
             >
               {category?.replace(/-/g, " ")}
             </Link>
             <span className="text-gray-500">/</span>
             <Link
               href={`/products/${category}/${subcategory}`}
-              className="text-amber-400 hover:text-amber-300 capitalize"
+              className="text-white hover:text-white/80 capitalize"
             >
               {subcategory?.replace(/-/g, " ")}
             </Link>
@@ -1299,28 +1378,64 @@ export default function ProductDetailPage() {
 
           {/* Right Column - Product Info */}
           <div>
-            <h1 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            <h1 className="text-3xl lg:text-4xl font-bold text-white mb-4 drop-shadow-[0_0_8px_rgba(255,255,255,0.25)]">
               {product.fullName}
             </h1>
-
             <div className="prose prose-neutral max-w-none mb-8">
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-white/90 leading-relaxed">
                 {product.description}
               </p>
             </div>
 
             {/* CTA Section */}
-            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 mb-8">
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Need help?
-              </h3>
-              <p className="text-gray-300 mb-4">Search and compare products</p>
-              <Link
-                href="/contact"
-                className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
-              >
-                Get Started
-              </Link>
+            {/* CTA Section */}
+            <div
+              className="relative rounded-lg p-6 mb-8 border border-slate-600 transition-all duration-300 group"
+              style={{ backgroundColor: "#0F172B" }}
+            >
+              {/* Card Background Hover Overlay */}
+              <div
+                className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #2055AB 0%, #2055AB 100%)",
+                }}
+              ></div>
+
+              <div className="relative z-10">
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  Need help?
+                </h3>
+                <p className="text-white/80 mb-4">
+                  Search and compare products
+                </p>
+
+                {/* Button with separate hover effect */}
+                <Link
+                  href=""
+                  className="inline-block relative font-medium py-3 px-6 rounded-lg transition-all duration-300 overflow-hidden hover:scale-105 hover:shadow-lg"
+                  style={{
+                    backgroundColor: "#0F172B",
+                    color: "white",
+                    border: "1px solid #475569",
+                  }}
+                  onMouseEnter={(e) => {
+                    // Stop event propagation to prevent card hover when hovering button
+                    e.stopPropagation();
+                  }}
+                >
+                  {/* Button Hover Overlay */}
+                  <span
+                    className="absolute inset-0 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #2055AB 0%, #2055AB 100%)",
+                    }}
+                  ></span>
+
+                  <span className="relative z-10">Get Started</span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -1328,58 +1443,86 @@ export default function ProductDetailPage() {
         {/* Performance Section */}
         <div className="mt-16">
           <h2 className="text-2xl font-bold text-white mb-8">Performance</h2>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Comfort */}
-            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
-              <h3 className="text-lg font-semibold text-amber-400 mb-4">
-                Comfort
-              </h3>
-              <div className="space-y-3">
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Air tightness</span>
-                  <span className="text-white">
-                    {product.performance.comfort.airTightness}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Acoustics</span>
-                  <span className="text-white">
-                    {product.performance.comfort.acoustics}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Water tightness</span>
-                  <span className="text-white">
-                    {product.performance.comfort.waterTightness}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Wind load resistance</span>
-                  <span className="text-white">
-                    {product.performance.comfort.windLoadResistance}
-                  </span>
+            <div
+              className="hover-card relative rounded-lg p-6 shadow-lg border border-slate-600 transition-all duration-300 overflow-hidden"
+              style={{ backgroundColor: "#0F172B" }}
+            >
+              {/* Gradient Overlay */}
+              <div
+                className="gradient-overlay absolute inset-0 opacity-0 rounded-lg"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #2055AB 0%, #2055AB 100%)",
+                  pointerEvents: "none",
+                }}
+              ></div>
+
+              <div className="relative z-10">
+                <h3 className="text-lg font-semibold text-white mb-4">
+                  Comfort
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="text-white/80">Air tightness</span>
+                    <span className="text-white">
+                      {product.performance.comfort.airTightness}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-white/80">Acoustics</span>
+                    <span className="text-white">
+                      {product.performance.comfort.acoustics}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-white/80">Water tightness</span>
+                    <span className="text-white">
+                      {product.performance.comfort.waterTightness}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-white/80">Wind load resistance</span>
+                    <span className="text-white">
+                      {product.performance.comfort.windLoadResistance}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Safety */}
-            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
-              <h3 className="text-lg font-semibold text-amber-400 mb-4">
-                Safety
-              </h3>
-              <div className="space-y-3">
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Burglar resistance</span>
-                  <span className="text-white">
-                    {product.performance.safety.burglarResistance}
-                  </span>
+            <div
+              className="hover-card relative rounded-lg p-6 shadow-lg border border-slate-600 transition-all duration-300 overflow-hidden"
+              style={{ backgroundColor: "#0F172B" }}
+            >
+              {/* Gradient Overlay */}
+              <div
+                className="gradient-overlay absolute inset-0 opacity-0 rounded-lg"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #2055AB 0%, #2055AB 100%)",
+                  pointerEvents: "none",
+                }}
+              ></div>
+
+              <div className="relative z-10">
+                <h3 className="text-lg font-semibold text-white mb-4">
+                  Safety
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="text-white/80">Burglar resistance</span>
+                    <span className="text-white">
+                      {product.performance.safety.burglarResistance}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <p className="text-sm text-gray-400 mt-4">
+          <p className="text-sm text-white/60 mt-4">
             * Note: Performances and properties may be different depending on
             the profile combinations
           </p>
@@ -1388,62 +1531,106 @@ export default function ProductDetailPage() {
         {/* Properties Section */}
         <div className="mt-16">
           <h2 className="text-2xl font-bold text-white mb-8">Properties</h2>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Max Dimensions & Weight */}
-            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
-              <h3 className="text-lg font-semibold text-amber-400 mb-4">
-                Max. dimensions & weight
-              </h3>
-              <div className="space-y-3">
-                {Object.entries(product.properties.maxDimensions).map(
-                  ([key, value]) => (
-                    <div key={key} className="flex justify-between">
-                      <span className="text-gray-300 capitalize">
-                        {key.replace(/([A-Z])/g, " $1").toLowerCase()}
-                      </span>
-                      <span className="text-white">{value}</span>
-                    </div>
-                  )
-                )}
+            <div
+              className="hover-card relative rounded-lg p-6 shadow-lg border border-slate-600 transition-all duration-300 overflow-hidden"
+              style={{ backgroundColor: "#0F172B" }}
+            >
+              {/* Gradient Overlay */}
+              <div
+                className="gradient-overlay absolute inset-0 opacity-0 rounded-lg"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #2055AB 0%, #2055AB 100%)",
+                  pointerEvents: "none",
+                }}
+              ></div>
+
+              <div className="relative z-10">
+                <h3 className="text-lg font-semibold text-white mb-4">
+                  Max. dimensions & weight
+                </h3>
+                <div className="space-y-3">
+                  {Object.entries(product.properties.maxDimensions).map(
+                    ([key, value]) => (
+                      <div key={key} className="flex justify-between">
+                        <span className="text-white/80 capitalize">
+                          {key.replace(/([A-Z])/g, " $1").toLowerCase()}
+                        </span>
+                        <span className="text-white">{value}</span>
+                      </div>
+                    )
+                  )}
+                </div>
               </div>
             </div>
 
             {/* Sightlines */}
-            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
-              <h3 className="text-lg font-semibold text-amber-400 mb-4">
-                Sightlines
-              </h3>
-              <div className="space-y-3">
-                {Object.entries(product.properties.sightlines).map(
-                  ([key, value]) => (
-                    <div key={key} className="flex justify-between">
-                      <span className="text-gray-300 capitalize">
-                        {key.replace(/([A-Z])/g, " $1").toLowerCase()}
-                      </span>
-                      <span className="text-white">{value}</span>
-                    </div>
-                  )
-                )}
+            <div
+              className="hover-card relative rounded-lg p-6 shadow-lg border border-slate-600 transition-all duration-300 overflow-hidden"
+              style={{ backgroundColor: "#0F172B" }}
+            >
+              {/* Gradient Overlay */}
+              <div
+                className="gradient-overlay absolute inset-0 opacity-0 rounded-lg"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #2055AB 0%, #2055AB 100%)",
+                  pointerEvents: "none",
+                }}
+              ></div>
+
+              <div className="relative z-10">
+                <h3 className="text-lg font-semibold text-white mb-4">
+                  Sightlines
+                </h3>
+                <div className="space-y-3">
+                  {Object.entries(product.properties.sightlines).map(
+                    ([key, value]) => (
+                      <div key={key} className="flex justify-between">
+                        <span className="text-white/80 capitalize">
+                          {key.replace(/([A-Z])/g, " $1").toLowerCase()}
+                        </span>
+                        <span className="text-white">{value}</span>
+                      </div>
+                    )
+                  )}
+                </div>
               </div>
             </div>
 
             {/* Glazing */}
-            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
-              <h3 className="text-lg font-semibold text-amber-400 mb-4">
-                Glazing
-              </h3>
-              <div className="space-y-3">
-                {Object.entries(product.properties.glazing).map(
-                  ([key, value]) => (
-                    <div key={key} className="flex justify-between">
-                      <span className="text-gray-300 capitalize">
-                        {key.replace(/([A-Z])/g, " $1").toLowerCase()}
-                      </span>
-                      <span className="text-white">{value}</span>
-                    </div>
-                  )
-                )}
+            <div
+              className="hover-card relative rounded-lg p-6 shadow-lg border border-slate-600 transition-all duration-300 overflow-hidden"
+              style={{ backgroundColor: "#0F172B" }}
+            >
+              {/* Gradient Overlay */}
+              <div
+                className="gradient-overlay absolute inset-0 opacity-0 rounded-lg"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #2055AB 0%, #2055AB 100%)",
+                  pointerEvents: "none",
+                }}
+              ></div>
+
+              <div className="relative z-10">
+                <h3 className="text-lg font-semibold text-white mb-4">
+                  Glazing
+                </h3>
+                <div className="space-y-3">
+                  {Object.entries(product.properties.glazing).map(
+                    ([key, value]) => (
+                      <div key={key} className="flex justify-between">
+                        <span className="text-white/80 capitalize">
+                          {key.replace(/([A-Z])/g, " $1").toLowerCase()}
+                        </span>
+                        <span className="text-white">{value}</span>
+                      </div>
+                    )
+                  )}
+                </div>
               </div>
             </div>
           </div>

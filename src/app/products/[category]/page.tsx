@@ -2,8 +2,11 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 const subcategoriesData = {
   "sliding-windows-and-doors": [
     {
@@ -107,6 +110,7 @@ export default function SubCategoryPage() {
   const params = useParams();
   const category = params.category as string;
   const [currentCategory, setCurrentCategory] = useState(category);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   // Update category when params change
   useEffect(() => {
@@ -115,6 +119,66 @@ export default function SubCategoryPage() {
     }
   }, [category, currentCategory]);
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Card hover animations
+      const hoverCards = gsap.utils.toArray(".hover-card");
+      hoverCards.forEach((card: unknown) => {
+        const element = card as HTMLElement;
+        const overlay = element.querySelector(".gradient-overlay");
+
+        element.addEventListener("mouseenter", () => {
+          gsap.to(element, {
+            y: -8,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+          gsap.to(overlay, {
+            opacity: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+
+        element.addEventListener("mouseleave", () => {
+          gsap.to(element, {
+            y: 0,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+          gsap.to(overlay, {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+      });
+
+      // Card entrance animations
+      const cards = gsap.utils.toArray(".subcategory-card");
+      cards.forEach((card: any, i) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 80 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            delay: i * 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, [currentCategory]);
+
   const subcategories =
     currentCategory in subcategoriesData
       ? subcategoriesData[currentCategory as keyof typeof subcategoriesData]
@@ -122,9 +186,13 @@ export default function SubCategoryPage() {
 
   // Add key to force re-render when category changes
   return (
-    <div key={currentCategory} className="min-h-screen bg-[#0F172B] mt-2">
+    <div
+      key={currentCategory}
+      ref={sectionRef}
+      className="min-h-screen bg-slate-900 mt-2"
+    >
       {/* Breadcrumb */}
-      <div className="bg-[#0F172B] border-b border-gray-700">
+      <div className="bg-slate-900 border-b border-slate-700">
         <div
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4"
           style={{
@@ -132,10 +200,7 @@ export default function SubCategoryPage() {
           }}
         >
           <nav className="flex space-x-2 text-sm">
-            <Link
-              href="/products"
-              className="text-amber-400 hover:text-amber-300"
-            >
+            <Link href="/products" className="text-white hover:text-white/80">
               Products
             </Link>
             <span className="text-gray-500">/</span>
@@ -147,12 +212,12 @@ export default function SubCategoryPage() {
       </div>
 
       {/* Header */}
-      <div className="bg-gradient-to-r from-amber-900 to-amber-700 py-12">
+      <div className="bg-slate-900 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-amber-100 mb-2 capitalize">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 capitalize drop-shadow-[0_0_8px_rgba(255,255,255,0.25)]">
             {currentCategory?.replace(/-/g, " ")}
           </h1>
-          <p className="text-amber-200">
+          <p className="text-white/90">
             Choose from our range of specialized systems
           </p>
         </div>
@@ -166,42 +231,56 @@ export default function SubCategoryPage() {
               <Link
                 key={`${currentCategory}-${idx}`}
                 href={`/products/${currentCategory}/${subcategory.id}`}
-                className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+                className="subcategory-card hover-card group relative rounded-2xl shadow-lg overflow-hidden border border-slate-600 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                style={{ backgroundColor: "#0F172B" }}
               >
-                <div className="h-48 bg-gray-700 overflow-hidden">
-                  <Image
-                    src={subcategory.image}
-                    alt={subcategory.name}
-                    width={1200}
-                    height={800}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-amber-400 mb-3">
-                    {subcategory.name}
-                  </h3>
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                    {subcategory.description}
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-400">
-                      {subcategory.products.length} Products
-                    </span>
-                    <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center">
-                      <svg
-                        className="w-4 h-4 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                {/* Gradient Overlay */}
+                <div
+                  className="gradient-overlay absolute inset-0 opacity-0 rounded-2xl"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #2055AB 0%, #2055AB 100%)",
+                    pointerEvents: "none",
+                  }}
+                ></div>
+
+                {/* Content */}
+                <div className="relative z-10">
+                  <div className="h-48 bg-slate-700 overflow-hidden">
+                    <Image
+                      src={subcategory.image}
+                      alt={subcategory.name}
+                      width={1200}
+                      height={800}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-white mb-3">
+                      {subcategory.name}
+                    </h3>
+                    <p className="text-white/80 text-sm leading-relaxed mb-4">
+                      {subcategory.description}
+                    </p>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-white/70">
+                        {subcategory.products.length} Products
+                      </span>
+                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center border border-white/30">
+                        <svg
+                          className="w-4 h-4 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>

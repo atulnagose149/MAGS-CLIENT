@@ -2,6 +2,11 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const productsData = {
   "economy-sliding-system": [
@@ -255,26 +260,139 @@ export default function ProductsListPage() {
   const params = useParams();
   const category = params.category as string;
   const subcategory = params.subcategory as string;
+  const sectionRef = useRef<HTMLDivElement>(null);
+
   const products =
     subcategory in productsData
       ? productsData[subcategory as keyof typeof productsData]
       : [];
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Card hover animations
+      const hoverCards = gsap.utils.toArray(".hover-card");
+      hoverCards.forEach((card: unknown) => {
+        const element = card as HTMLElement;
+        const overlay = element.querySelector(".gradient-overlay");
+
+        element.addEventListener("mouseenter", () => {
+          gsap.to(element, {
+            y: -8,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+          gsap.to(overlay, {
+            opacity: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+
+        element.addEventListener("mouseleave", () => {
+          gsap.to(element, {
+            y: 0,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+          gsap.to(overlay, {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+      });
+
+      // Button hover animations
+      const buttons = gsap.utils.toArray(".hover-button");
+      buttons.forEach((button: unknown) => {
+        const element = button as HTMLElement;
+        const overlay = element.querySelector(".button-overlay");
+
+        element.addEventListener("mouseenter", () => {
+          gsap.to(element, {
+            scale: 1.05,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+          if (overlay) {
+            gsap.to(overlay, {
+              opacity: 1,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          }
+        });
+
+        element.addEventListener("mouseleave", () => {
+          gsap.to(element, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+          if (overlay) {
+            gsap.to(overlay, {
+              opacity: 0,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          }
+        });
+      });
+
+      // Card entrance animations
+      const cards = gsap.utils.toArray(".product-card");
+      cards.forEach((card: any, i) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 80 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            delay: i * 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   if (!products || products.length === 0) {
     return (
-      <div className="min-h-screen bg-[#0F172B] flex items-center justify-center">
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-white mb-4">
             Products Not Found
           </h1>
-          <p className="text-gray-300 mb-6">
+          <p className="text-white/80 mb-6">
             The requested product category could not be found.
           </p>
           <Link
             href="/products"
-            className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg"
+            className="hover-button relative inline-block font-semibold px-6 py-3 rounded-lg transition-all duration-300 overflow-hidden cursor-pointer"
+            style={{
+              backgroundColor: "#0F172B",
+              color: "white",
+              border: "1px solid #475569",
+            }}
           >
-            Back to Products
+            {/* Button Overlay */}
+            <div
+              className="button-overlay absolute inset-0 opacity-0 rounded-lg"
+              style={{
+                background: "linear-gradient(135deg, #2055AB 0%, #2055AB 100%)",
+                pointerEvents: "none",
+              }}
+            ></div>
+
+            <span className="relative z-10">Back to Products</span>
           </Link>
         </div>
       </div>
@@ -282,9 +400,9 @@ export default function ProductsListPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0F172B]">
+    <div ref={sectionRef} className="min-h-screen bg-slate-900">
       {/* Breadcrumb */}
-      <div className="bg-[#0F172B] border-b border-gray-700">
+      <div className="bg-slate-900 border-b border-slate-700">
         <div
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4"
           style={{
@@ -292,16 +410,13 @@ export default function ProductsListPage() {
           }}
         >
           <nav className="flex space-x-2 text-sm">
-            <Link
-              href="/products"
-              className="text-amber-400 hover:text-amber-300"
-            >
+            <Link href="/products" className="text-white hover:text-white/80">
               Products
             </Link>
             <span className="text-gray-500">/</span>
             <Link
               href={`/products/${category}`}
-              className="text-amber-400 hover:text-amber-300 capitalize"
+              className="text-white hover:text-white/80 capitalize"
             >
               {category?.replace(/-/g, " ")}
             </Link>
@@ -314,12 +429,12 @@ export default function ProductsListPage() {
       </div>
 
       {/* Header */}
-      <div className="bg-gradient-to-r from-amber-900 to-amber-700 py-12">
+      <div className="bg-slate-900 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-amber-100 mb-2 capitalize">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 capitalize drop-shadow-[0_0_8px_rgba(255,255,255,0.25)]">
             {subcategory?.replace(/-/g, " ")}
           </h1>
-          <p className="text-amber-200">
+          <p className="text-white/90">
             Select a specific product for detailed information
           </p>
         </div>
@@ -333,42 +448,56 @@ export default function ProductsListPage() {
               <Link
                 key={idx}
                 href={`/products/${category}/${subcategory}/${product.id}`}
-                className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+                className="product-card hover-card group relative rounded-2xl shadow-lg overflow-hidden border border-slate-600 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                style={{ backgroundColor: "#0F172B" }}
               >
-                <div className="h-48 bg-gray-700 overflow-hidden">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    width={1200}
-                    height={800}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-amber-400 mb-3">
-                    {product.name}
-                  </h3>
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                    {product.description}
-                  </p>
-                  <p className="text-xs text-gray-400 italic mb-4">
-                    {product.specs}
-                  </p>
-                  <div className="flex justify-end">
-                    <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center">
-                      <svg
-                        className="w-4 h-4 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                {/* Gradient Overlay */}
+                <div
+                  className="gradient-overlay absolute inset-0 opacity-0 rounded-2xl"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #2055AB 0%, #2055AB 100%)",
+                    pointerEvents: "none",
+                  }}
+                ></div>
+
+                {/* Content */}
+                <div className="relative z-10">
+                  <div className="h-48 bg-slate-700 overflow-hidden">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      width={1200}
+                      height={800}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-white mb-3">
+                      {product.name}
+                    </h3>
+                    <p className="text-white/80 text-sm leading-relaxed mb-4">
+                      {product.description}
+                    </p>
+                    <p className="text-xs text-white/70 italic mb-4">
+                      {product.specs}
+                    </p>
+                    <div className="flex justify-end">
+                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center border border-white/30">
+                        <svg
+                          className="w-4 h-4 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
